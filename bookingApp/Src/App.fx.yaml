@@ -1,0 +1,18 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(
+            varUser,
+            User()
+        );
+        Set(
+            isAdminList,
+            !IsBlank(
+                LookUp(
+                    AdminList,
+                    AdminName.DisplayName = varUser.FullName
+                )
+            )
+        )
+    StartScreen: =StartingPage
+

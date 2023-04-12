@@ -1,0 +1,116 @@
+navbar As CanvasComponent:
+    Fill: =RGBA(0, 174, 239, 1)
+    Height: =80
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "'nav items' As groupContainer.horizontalAutoLayoutContainer":
+        Height: =80
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =20
+        PaddingRight: =20
+        Width: =640
+        ZIndex: =1
+
+        butttons As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0.7
+            Height: =100
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =10
+            LayoutMinHeight: =0
+            LayoutMinWidth: =0
+            LayoutMode: =LayoutMode.Auto
+            Width: =170
+            ZIndex: =1
+
+            Image5 As image:
+                Height: =80
+                Image: =neliotunnus_laurea_rgb
+                LayoutMinHeight: =320
+                LayoutMinWidth: =320
+                Width: =80
+                ZIndex: =1
+
+            "'catalog button_1' As button":
+                Fill: =RGBA(240, 120, 170, 1)
+                FillPortions: =1
+                Height: =30
+                HoverColor: |
+                    =RGBA(250, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+                LayoutMinHeight: =70
+                LayoutMinWidth: =0
+                OnSelect: =Navigate(Client, ScreenTransition.None)
+                RadiusBottomLeft: =3
+                RadiusBottomRight: =3
+                RadiusTopLeft: =3
+                RadiusTopRight: =3
+                Size: =10
+                Text: ="Catalog"
+                Width: =75
+                X: =160
+                Y: =220
+                ZIndex: =2
+
+            "'bookings button_1' As button":
+                Fill: =RGBA(240, 120, 170, 1)
+                FillPortions: =1
+                Height: =30
+                HoverColor: |
+                    =RGBA(250, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+                LayoutMinHeight: =70
+                LayoutMinWidth: =0
+                OnSelect: =Navigate(BrowseItems, ScreenTransition.None)
+                RadiusBottomLeft: =3
+                RadiusBottomRight: =3
+                RadiusTopLeft: =3
+                RadiusTopRight: =3
+                Size: =10
+                Text: ="Bookings"
+                Width: =75
+                X: =88
+                Y: =220
+                ZIndex: =3
+
+            "'bookings button_2' As button":
+                Fill: =RGBA(240, 120, 170, 1)
+                FillPortions: =1
+                Height: =30
+                HoverColor: |
+                    =RGBA(250, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+                LayoutMinHeight: =70
+                LayoutMinWidth: =0
+                OnSelect: =Navigate(Admin, ScreenTransition.None)
+                RadiusBottomLeft: =3
+                RadiusBottomRight: =3
+                RadiusTopLeft: =3
+                RadiusTopRight: =3
+                Size: =10
+                Text: ="Admin"
+                Visible: =isAdminList
+                Width: =75
+                X: =88
+                Y: =220
+                ZIndex: =4
+
+        Image4 As image:
+            Height: =80
+            Image: =User().Image
+            LayoutMinHeight: =320
+            LayoutMinWidth: =320
+            OnSelect: =Navigate(StartingPage)
+            RadiusBottomLeft: =45
+            RadiusBottomRight: =45
+            RadiusTopLeft: =45
+            RadiusTopRight: =45
+            Width: =80
+            ZIndex: =3
+

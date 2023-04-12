@@ -1,0 +1,310 @@
+Calendar As screen:
+    OnVisible: |-
+        =Set(varFirstDayOfMonth, 
+            Date(
+                Year(Today()),
+                Month(Today()),
+                1
+            )
+        )
+
+    navbar_2 As navbar:
+        ZIndex: =14
+
+    timeSelector_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-81
+        ZIndex: =14
+
+        endMinPicker_2 As dropdown:
+            Height: =50
+            Items: =["00", "15", "30", "45"]
+            Size: =16
+            Width: =127
+            X: =444
+            Y: =955
+            ZIndex: =1
+
+        endHourPicker_2 As dropdown:
+            Default: =
+            Height: =50
+            Items: =["09","10", "11", "12", "13", "14", "15", "16",]
+            Size: =16
+            Width: =127
+            X: =294
+            Y: =955
+            ZIndex: =2
+
+        startMinPicker_2 As dropdown:
+            Height: =50
+            Items: =["00", "15", "30", "45"]
+            Size: =16
+            Width: =131
+            X: =440
+            Y: =823
+            ZIndex: =3
+
+        startHourPicker_2 As dropdown:
+            Default: =
+            Height: =50
+            Items: =["09","10", "11", "12", "13", "14", "15", "16",]
+            Size: =16
+            Width: =124
+            X: =297
+            Y: =823
+            ZIndex: =4
+
+        startDatePicker_2 As datepicker:
+            Height: =50
+            Size: =16
+            Width: =210
+            X: =67
+            Y: =823
+            ZIndex: =5
+
+        endDatePicker_2 As datepicker:
+            Height: =50
+            Size: =16
+            Width: =210
+            X: =67
+            Y: =955
+            ZIndex: =6
+
+        endTimeLabel_2 As label:
+            Align: =Align.Center
+            Height: =50
+            Size: =16
+            Text: |-
+                ="Ending time:"
+            Width: =504
+            X: =67
+            Y: =905
+            ZIndex: =7
+
+        startTimeLabel_2 As label:
+            Align: =Align.Center
+            Height: =50
+            Size: =16
+            Text: |-
+                ="Starting time:"
+            Width: =504
+            X: =67
+            Y: =773
+            ZIndex: =8
+
+    itemDropdown As dropdown:
+        Default: ="item 1"
+        Height: =37
+        Items: =Equipment
+        Size: =14
+        Width: =339
+        X: =150
+        Y: =90
+        ZIndex: =15
+
+    Button1_2 As button:
+        Fill: =RGBA(0, 159, 218, 80%)
+        Height: =62
+        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+        OnSelect: =Navigate(GreatSuccess, ScreenTransition.None)
+        Size: =24
+        Text: ="Book"
+        Width: =187
+        X: =225
+        Y: =1037
+        ZIndex: =16
+
+    calendarElement As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+        calendarBackground_2 As rectangle:
+            Fill: =RGBA(240, 240, 240, 1)
+            Height: =611
+            Width: =640
+            Y: =138
+            ZIndex: =9
+
+        CalendarGrid_2 As gallery.galleryVertical:
+            BorderThickness: =1
+            Height: =468
+            Items: |-
+                =ForAll( 
+                    Sequence(42), 
+                    {Value: varFirstDayOfMonth + Value - 1 -Weekday(
+                        varFirstDayOfMonth, 
+                        StartOfWeek.Sunday
+                    ) + 1,
+                    NextDay: varFirstDayOfMonth + Value - 1 -Weekday(
+                        varFirstDayOfMonth, 
+                        StartOfWeek.Sunday
+                    ) + 2
+                    }
+                ) 
+            Layout: =Layout.Vertical
+            TemplatePadding: =0
+            TemplateSize: =Self.Height / 6
+            Width: =543
+            WrapCount: =7
+            X: =48
+            Y: =261
+            ZIndex: =10
+
+            calendarDayLabel_2 As label:
+                BorderColor: =RGBA(100, 100, 100, 50%)
+                BorderThickness: =0.5
+                DisabledBorderColor: =RGBA(56, 56, 56, 10)
+                Fill: =RGBA(250, 250, 250, 1)
+                Height: =Parent.TemplateHeight
+                OnSelect: =Select(Parent)
+                Size: =8
+                Text: =
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth
+                ZIndex: =1
+
+            bookingInfo_2 As gallery.galleryVertical:
+                Height: =59
+                Items: |-
+                    =Filter(
+                        bookings, 
+                        itemName = itemDropdown.Selected.Title
+                        And startDate < ThisItem.NextDay
+                        And endDate >= ThisItem.Value  
+                    )
+                Layout: =Layout.Vertical
+                TemplateFill: =
+                TemplatePadding: =0
+                TemplateSize: =Self.Height / 3
+                Width: =Parent.TemplateWidth
+                Y: =22
+                ZIndex: =2
+
+                infoLabel_2 As label:
+                    Align: =Align.Center
+                    Height: =Parent.TemplateHeight
+                    OnSelect: =Select(Parent)
+                    Size: =8
+                    Text: |-
+                        =If(
+                            !IsBlank(ThisItem.startDate)
+                            And !IsBlank(ThisItem.endDate),
+                            Concatenate(Text(ThisItem.startDate, "hh:mm"), " - ", Text(ThisItem.endDate, "hh:mm"))
+                        
+                        )
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =1
+
+            dateLabel_2 As label:
+                BorderColor: =Color.Transparent
+                BorderThickness: =0.5
+                DisabledBorderColor: =RGBA(56, 56, 56, 10)
+                Fill: =Color.Transparent
+                Height: =22
+                OnSelect: =Select(Parent)
+                Size: =8
+                Text: =Day(ThisItem.Value)
+                VerticalAlign: =VerticalAlign.Top
+                Width: =24
+                ZIndex: =3
+
+        weekdays As gallery.galleryHorizontal:
+            BorderThickness: =0.5
+            Fill: =RGBA(93, 216, 201, 20%)
+            Height: =43
+            Items: =Calendar.WeekdaysShort()
+            ShowScrollbar: =false
+            TemplatePadding: =
+            TemplateSize: =Self.Width/7
+            Width: =543
+            X: =48
+            Y: =218
+            ZIndex: =11
+
+            weekdayLabel_2 As label:
+                Align: =Align.Center
+                BorderThickness: =
+                Height: =Parent.Height
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.Value
+                Width: =Parent.TemplateWidth
+                ZIndex: =1
+
+        monthSelector_2 As groupContainer.horizontalAutoLayoutContainer:
+            Height: =66
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMode: =LayoutMode.Auto
+            Width: =300
+            X: =48
+            Y: =152
+            ZIndex: =12
+
+            prevMonth_2 As icon.ChevronLeft:
+                Height: =monthSelector_2.Height/2
+                Icon: =Icon.ChevronLeft
+                OnSelect: |-
+                    =Set(varFirstDayOfMonth, 
+                        Date(
+                            Year(varFirstDayOfMonth),
+                            Month(varFirstDayOfMonth) - 1,
+                            1
+                        )
+                    )
+                Width: =Parent.Width/10
+                X: =
+                ZIndex: =1
+
+            monthLabel_2 As label:
+                Align: =Align.Center
+                Height: =Parent.Height
+                LayoutMinHeight: =70
+                LayoutMinWidth: =560
+                Size: =21
+                Text: =Text(varFirstDayOfMonth,"[$-en-US]mmmm yyyy")
+                Width: =Parent.Width - prevMonth_2.Width*2
+                X: =60
+                ZIndex: =2
+
+            nextMonth_2 As icon.ChevronRight:
+                Height: =monthSelector_2.Height/2
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =Set(varFirstDayOfMonth, 
+                        Date(
+                            Year(varFirstDayOfMonth),
+                            Month(varFirstDayOfMonth) + 1,
+                            1
+                        )
+                    )
+                Width: =Parent.Width/10
+                X: =
+                ZIndex: =3
+
+        currentDaySelect_2 As button:
+            Height: =39
+            OnSelect: |-
+                =Set(varFirstDayOfMonth, 
+                    Date(
+                        Year(Today()),
+                        Month(Today()),
+                        1
+                    )
+                )
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =16
+            Text: ="Today"
+            Width: =124
+            X: =467
+            Y: =166
+            ZIndex: =13
+

@@ -1,0 +1,29 @@
+BrowseItems As screen:
+
+    navbar_10 As navbar:
+
+    Button3 As button:
+        Fill: =RGBA(0, 159, 218, 1)
+        Height: =70
+        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+        OnSelect: =Navigate(Client, ScreenTransition.None)
+        Size: =24
+        Text: ="Browse items"
+        Width: =280
+        X: =180
+        Y: =718
+        ZIndex: =3
+
+    Label3 As label:
+        Align: =Align.Center
+        Height: =187
+        Size: =21
+        Text: |-
+            ="You have no reservations!
+            
+            Please use the catalogue to book items."
+        Width: =560
+        X: =40
+        Y: =320
+        ZIndex: =4
+

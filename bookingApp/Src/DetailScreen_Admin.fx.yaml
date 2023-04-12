@@ -1,0 +1,232 @@
+"DetailScreen_Admin As screen.'phoneDetailViewLayout_ver3.0'":
+
+    DetailForm1 As formViewer:
+        DataSource: =[@Equipment]
+        Height: =876
+        Item: =BrowseGallery1.Selected
+        Width: =Parent.Width
+        Y: =80
+        ZIndex: =2
+
+        Title_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+        Image_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Image"
+            Default: =ThisItem.Image
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As image:
+                DisplayMode: =Parent.DisplayMode
+                Height: =320
+                Image: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+        Description_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Longdescription"
+            Default: =ThisItem.Description
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Longdescription")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                ZIndex: =2
+
+        "'Website/Manual_DataCard1' As typedDataCard.urlViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Website"
+            Default: =ThisItem.'Website/Manual'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Website")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue4 As htmlViewer:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =45
+                HtmlText: ="<a href='" & Parent.Default & "'>" & Parent.Default & "</a>"
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
+
+    IconDelete1 As icon.Trash:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(184, 0, 0, 1)
+        DisplayMode: =If(!IsBlank(BrowseGallery1.Selected) && DataSourceInfo([@Equipment], DataSourceInfo.DeletePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@Equipment], BrowseGallery1.Selected); If (IsEmpty(Errors([@Equipment], BrowseGallery1.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Delete this item"
+        Width: =88
+        X: =450
+        Y: =88
+        ZIndex: =3
+
+    IconEdit1 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(0, 0, 0, 1)
+        DisplayMode: =If(DataSourceInfo([@Equipment], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm(EditForm1);Navigate(EditScreen1, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Edit this item"
+        Width: =88
+        X: =514
+        Y: =88
+        ZIndex: =4
+
+    Button1 As button:
+        Fill: =RGBA(0, 159, 218, 80%)
+        Height: =62
+        OnSelect: =Navigate(Calendar, ScreenTransition.None)
+        Size: =24
+        Text: ="Book"
+        Width: =187
+        X: =226
+        Y: =1061
+        ZIndex: =5
+
+    Icon2 As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
+        Y: =393
+        ZIndex: =6
+
+    Icon3 As icon.ArrowRight:
+        Icon: =Icon.ArrowRight
+        X: =558
+        Y: =393
+        ZIndex: =7
+
+    navbar_4 As navbar:
+        ZIndex: =8
+
+    IconBackarrow1 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Height: =44
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Admin, ScreenTransition.None)
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =60
+        X: =470
+        Y: =18
+        ZIndex: =9
+

@@ -1,0 +1,189 @@
+"'Admin own bookings page' As screen":
+
+    navbar_11 As navbar:
+
+    "Gallery4_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =638
+        Items: =CustomGallerySample
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Y: =296
+        ZIndex: =2
+
+        Image5_7 As image:
+            Height: =128
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Separator4_7 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Label1_1 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: |-
+                ="Item name
+                "
+            Width: =259
+            X: =156
+            Y: =32
+            ZIndex: =6
+
+    Button2_9 As button:
+        Height: =39
+        Size: =24
+        Text: ="Edit"
+        Width: =173
+        X: =436
+        Y: =482
+        ZIndex: =4
+
+    Button2_10 As button:
+        Height: =39
+        Size: =24
+        Text: ="Cancel"
+        Width: =173
+        X: =436
+        Y: =695
+        ZIndex: =5
+
+    Button2_13 As button:
+        Height: =39
+        Size: =24
+        Text: ="Edit"
+        Width: =173
+        X: =436
+        Y: =812
+        ZIndex: =6
+
+    Button2_11 As button:
+        Height: =39
+        Size: =24
+        Text: ="Cancel"
+        Width: =173
+        X: =436
+        Y: =404
+        ZIndex: =7
+
+    Button2_14 As button:
+        Height: =37
+        Size: =24
+        Text: ="Cancel"
+        Width: =173
+        X: =435
+        Y: =560
+        ZIndex: =8
+
+    Button2_15 As button:
+        Height: =44
+        Size: =24
+        Text: ="Edit"
+        Width: =172
+        X: =436
+        Y: =626
+        ZIndex: =9
+
+    Button2_16 As button:
+        Height: =39
+        Size: =24
+        Text: ="Cancel"
+        Width: =173
+        X: =436
+        Y: =869
+        ZIndex: =10
+
+    Button2_12 As button:
+        Height: =39
+        Size: =24
+        Text: ="Edit"
+        Width: =173
+        X: =436
+        Y: =338
+        ZIndex: =11
+
+    Item As dropdown:
+        Default: =""
+        Height: =43
+        Items: =Equipment
+        Size: =21
+        Width: =201
+        X: =12
+        Y: =136
+        ZIndex: =14
+
+    Item_1 As dropdown:
+        Default: ="Item"
+        Height: =43
+        Items: =Equipment
+        Size: =21
+        Width: =201
+        X: =235
+        Y: =136
+        ZIndex: =15
+
+    Label2 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Filter:"
+        Width: =560
+        Y: =66
+        ZIndex: =16
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =18
+        ZIndex: =16
+
+        TextSearchBox1_1 As text:
+            Align: =TextPosition.Left
+            Default: =""
+            DelayOutput: =true
+            Height: =68
+            HintText: ="Search items"
+            PaddingLeft: =70
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =7
+            RadiusTopLeft: =0
+            RadiusTopRight: =7
+            Size: =21
+            Width: =Parent.Width
+            Y: =195
+            ZIndex: =12
+
+        SearchIcon1_1 As icon.Search:
+            Color: =RGBA(191, 190, 190, 1)
+            Height: =Self.Width
+            Icon: =Icon.Search
+            PaddingBottom: =14
+            PaddingLeft: =14
+            PaddingRight: =14
+            PaddingTop: =14
+            Tooltip: ="Search"
+            Width: =TextSearchBox1_1.Height
+            X: =TextSearchBox1_1.X
+            Y: =195
+            ZIndex: =13
+
+    Label5 As label:
+        Align: =Align.Right
+        Height: =70
+        Size: =21
+        Text: ="Manage bookings (ADMIN)"
+        Width: =560
+        X: =68
+        Y: =66
+        ZIndex: =17
+
