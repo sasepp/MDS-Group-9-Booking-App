@@ -938,7 +938,14 @@
                     "IsLockable": false,
                     "NameMapSourceSchema": "?"
                   },
-                  "OnSelect"
+                  {
+                    "AFDDataSourceName": "",
+                    "AutoRuleBindingEnabled": false,
+                    "AutoRuleBindingString": "Navigate(BrowseItems, ScreenTransition.None)",
+                    "InvariantPropertyName": "OnSelect",
+                    "IsLockable": false,
+                    "NameMapSourceSchema": "?"
+                  }
                 ],
                 "ControlUniqueId": "73",
                 "DynamicProperties": [
@@ -1248,7 +1255,7 @@
                   },
                   {
                     "Category": "Behavior",
-                    "InvariantScript": "Navigate(BrowseItems, ScreenTransition.None)",
+                    "InvariantScript": "Navigate(OwnBookings, ScreenTransition.None)",
                     "Property": "OnSelect",
                     "RuleProviderType": "Unknown"
                   }
@@ -2012,7 +2019,7 @@
               },
               {
                 "Category": "Design",
-                "InvariantScript": "170",
+                "InvariantScript": "250",
                 "Property": "Width",
                 "RuleProviderType": "Unknown"
               },
@@ -2696,7 +2703,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638169821971246056",
+    "LastModifiedTimestamp": "638170089256117457",
     "Name": "navbar",
     "Rules": [
       {
@@ -2755,7 +2762,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638169821971246056",
+  "LastModifiedTimestamp": "638170089256117457",
   "Name": "e05e2b24a7b244858ed88339059c2684",
   "OverridableProperties": {},
   "TemplateOriginalName": "62517df3461e49448f901c08ecca6a02",

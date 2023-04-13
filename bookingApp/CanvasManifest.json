@@ -129,8 +129,8 @@
     "DetailScreen_Client",
     "EditScreen1",
     "GreatSuccess",
-    "Own bookings",
-    "Admin own bookings page",
+    "OwnBookings",
+    "AdminBookings",
     "StartingPage"
   ]
 }

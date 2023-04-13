@@ -55,7 +55,7 @@ calendar As CanvasComponent:
             Items: |-
                 =Filter(
                     bookings, 
-                    "item 1" in itemName
+                    "Item 1" in itemName
                     And startDate < ThisItem.NextDay
                     And endDate >= ThisItem.Value 
                     
