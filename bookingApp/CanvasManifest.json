@@ -105,6 +105,7 @@
     "Id": "afb92a2f-91a0-45aa-9ebb-0e9ab763b015",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
+    "ManualOfflineProfileId": "",
     "Name": "Digital Living Lab Equipment v_3",
     "OriginatingVersion": "1.326"
   },
