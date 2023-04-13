@@ -134,7 +134,7 @@ OwnBookings As screen:
             DisabledBorderColor: =RGBA(0, 159, 218, 1)
             Height: =80
             Icon: =Icon.Edit
-            OnSelect: =Select(Parent)
+            OnSelect: =
             Width: =80
             X: =420
             Y: =17
@@ -145,7 +145,7 @@ OwnBookings As screen:
             DisabledColor: =RGBA(0, 0, 0, 1)
             Height: =80
             Icon: =Icon.Trash
-            OnSelect: =Select(Parent)
+            OnSelect: =Remove(bookings,ThisItem)
             Width: =80
             X: =523
             Y: =17
