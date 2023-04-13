@@ -26,7 +26,7 @@ navbar As CanvasComponent:
             LayoutMinHeight: =0
             LayoutMinWidth: =0
             LayoutMode: =LayoutMode.Auto
-            Width: =170
+            Width: =250
             ZIndex: =1
 
             Image5 As image:
@@ -67,7 +67,7 @@ navbar As CanvasComponent:
                 HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
                 LayoutMinHeight: =70
                 LayoutMinWidth: =0
-                OnSelect: =Navigate(BrowseItems, ScreenTransition.None)
+                OnSelect: =Navigate(OwnBookings, ScreenTransition.None)
                 RadiusBottomLeft: =3
                 RadiusBottomRight: =3
                 RadiusTopLeft: =3

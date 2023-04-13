@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2023-03-23T16:41:51.6910000Z",
+      "LastChangedTimeString": "2023-04-04T16:27:15.2810000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -32,9 +32,12 @@
       "endDate": "endDate",
       "ID": "ID",
       "id0": "id",
+      "image": "image",
       "Modified": "Modified",
       "startDate": "startDate",
-      "Title": "Title"
+      "Title": "Title",
+      "user": "user",
+      "user#Claims": "user Claims"
     },
     "DatasetName": "https://laureauas.sharepoint.com/sites/TeamsMDS-Team9",
     "EncodeDataset": true,

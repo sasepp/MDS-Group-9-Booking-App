@@ -51,10 +51,3 @@ Component2 As CanvasComponent:
             Y: =Title4_2.Y + Title4_2.Height + 4
             ZIndex: =3
 
-        Separator4_2 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =5
-
