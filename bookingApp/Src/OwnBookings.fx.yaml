@@ -1,0 +1,169 @@
+OwnBookings As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+
+    Rectangle1_2 As rectangle:
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =265
+        OnSelect: =
+        Width: =594
+        X: =23
+        Y: =273
+        ZIndex: =1
+
+    navbar_9 As navbar:
+        ZIndex: =2
+
+    Label4 As label:
+        Align: =Align.Center
+        Height: =70
+        Size: =24
+        Text: ="My bookings"
+        Width: =560
+        X: =40
+        Y: =164
+        ZIndex: =3
+
+    Button3_1 As button:
+        Fill: =RGBA(0, 159, 218, 1)
+        Height: =70
+        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+        OnSelect: =Navigate(Client, ScreenTransition.None)
+        Size: =24
+        Text: ="Browse items"
+        Width: =280
+        X: =180
+        Y: =993
+        ZIndex: =4
+
+    "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =708
+        Items: =Filter('bookings', user.DisplayName=varUser.FullName)
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =312
+        Y: =273
+        ZIndex: =5
+
+        Separator4_8 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Label1_2 As label:
+            Height: =97
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =253
+            X: =161
+            ZIndex: =6
+
+        Label6_3 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.user.DisplayName
+            Width: =259
+            X: =161
+            Y: =133
+            ZIndex: =9
+
+        Label6_4 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.startDate
+            Width: =259
+            X: =161
+            Y: =166
+            ZIndex: =10
+
+        Label6_9 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.endDate
+            Width: =259
+            X: =161
+            Y: =194
+            ZIndex: =11
+
+        Label6_8 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="By"
+            Width: =259
+            X: =33
+            Y: =133
+            ZIndex: =12
+
+        Label6_10 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="From"
+            Width: =259
+            X: =33
+            Y: =166
+            ZIndex: =13
+
+        Label6_11 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="To"
+            Width: =259
+            X: =33
+            Y: =198
+            ZIndex: =14
+
+        Image3_2 As image:
+            Height: =116
+            OnSelect: =Select(Parent)
+            Width: =112
+            X: =33
+            Y: =10
+            ZIndex: =15
+
+        Icon4 As icon.Edit:
+            BorderColor: =RGBA(0, 159, 218, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 159, 218, 1)
+            Height: =80
+            Icon: =Icon.Edit
+            OnSelect: =Select(Parent)
+            Width: =80
+            X: =420
+            Y: =17
+            ZIndex: =16
+
+        Icon5 As icon.CancelBadge:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            Height: =80
+            Icon: =Icon.Trash
+            OnSelect: =Select(Parent)
+            Width: =80
+            X: =523
+            Y: =17
+            ZIndex: =17
+
+    Button3_2 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =70
+        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+        OnSelect: =Navigate(AdminBookings, ScreenTransition.None)
+        Size: =24
+        Text: ="Admin bookings"
+        Underline: =true
+        Visible: =isAdminList
+        Width: =280
+        X: =180
+        Y: =1063
+        ZIndex: =6
+

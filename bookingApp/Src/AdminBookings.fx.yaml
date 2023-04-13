@@ -1,0 +1,202 @@
+AdminBookings As screen:
+
+    navbar_11 As navbar:
+
+    "Gallery4_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Height: =863
+        Items: =bookings
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =312
+        Y: =258
+        ZIndex: =2
+
+        Rectangle1 As rectangle:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =265
+            OnSelect: =Select(Parent)
+            Width: =594
+            X: =23
+            ZIndex: =1
+
+        Separator4_7 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =2
+
+        Label1_1 As label:
+            Height: =97
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =253
+            X: =161
+            ZIndex: =3
+
+        Label6 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.user.DisplayName
+            Width: =259
+            X: =161
+            Y: =133
+            ZIndex: =4
+
+        Label6_1 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.startDate
+            Width: =259
+            X: =161
+            Y: =166
+            ZIndex: =5
+
+        Label6_2 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.endDate
+            Width: =259
+            X: =161
+            Y: =194
+            ZIndex: =6
+
+        Label6_5 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="By"
+            Width: =259
+            X: =33
+            Y: =133
+            ZIndex: =7
+
+        Label6_6 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="From"
+            Width: =259
+            X: =33
+            Y: =166
+            ZIndex: =8
+
+        Label6_7 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="To"
+            Width: =259
+            X: =33
+            Y: =198
+            ZIndex: =9
+
+        Image3 As image:
+            Height: =116
+            OnSelect: =Select(Parent)
+            Width: =112
+            X: =33
+            Y: =10
+            ZIndex: =10
+
+        Icon6 As icon.Edit:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =80
+            Icon: =Icon.Edit
+            Width: =80
+            X: =429
+            Y: =17
+            ZIndex: =11
+
+        Icon7 As icon.CancelBadge:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =80
+            Icon: =Icon.Trash
+            OnSelect: =Select(Parent)
+            Width: =80
+            X: =525
+            Y: =17
+            ZIndex: =12
+
+    Item As dropdown:
+        Default: =""
+        Height: =43
+        Items: =bookings
+        Size: =21
+        Width: =201
+        X: =12
+        Y: =136
+        ZIndex: =14
+
+    Item_1 As dropdown:
+        Default: ="Item"
+        Height: =43
+        Items: =bookings.startDate
+        Size: =21
+        Width: =201
+        X: =235
+        Y: =136
+        ZIndex: =15
+
+    Label2 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Filter:"
+        Width: =560
+        Y: =66
+        ZIndex: =16
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =18
+        ZIndex: =16
+
+        TextSearchBox1_1 As text:
+            Align: =TextPosition.Left
+            Default: =""
+            DelayOutput: =true
+            Height: =68
+            HintText: ="Search items"
+            PaddingLeft: =70
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =7
+            RadiusTopLeft: =0
+            RadiusTopRight: =7
+            Size: =21
+            Width: =Parent.Width
+            Y: =195
+            ZIndex: =12
+
+        SearchIcon1_1 As icon.Search:
+            Color: =RGBA(191, 190, 190, 1)
+            Height: =Self.Width
+            Icon: =Icon.Search
+            PaddingBottom: =14
+            PaddingLeft: =14
+            PaddingRight: =14
+            PaddingTop: =14
+            Tooltip: ="Search"
+            Width: =TextSearchBox1_1.Height
+            X: =TextSearchBox1_1.X
+            Y: =195
+            ZIndex: =13
+
+    Label5 As label:
+        Align: =Align.Right
+        Height: =70
+        Size: =21
+        Text: ="Manage bookings (ADMIN)"
+        Width: =560
+        X: =68
+        Y: =66
+        ZIndex: =17
+
