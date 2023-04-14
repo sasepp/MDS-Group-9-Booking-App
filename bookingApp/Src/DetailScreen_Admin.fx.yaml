@@ -6,7 +6,7 @@
         Item: =BrowseGallery1.Selected
         Width: =Parent.Width
         Y: =80
-        ZIndex: =2
+        ZIndex: =1
 
         Title_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
@@ -90,8 +90,9 @@
             Height: =40
             Required: =false
             Width: =640
+            WidthFit: =true
             X: =0
-            Y: =2
+            Y: =487
             ZIndex: =1
 
             DataCardKey3 As label:
@@ -106,16 +107,16 @@
                 ZIndex: =1
 
             DataCardValue3 As label:
-                AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
+                Height: =1546
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
                 Size: =21
                 Text: =Parent.Default
-                Width: =Parent.Width - 60
+                Width: =580
                 X: =30
-                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                Y: =58
                 ZIndex: =2
 
         "'Website/Manual_DataCard1' As typedDataCard.urlViewCard":
@@ -173,7 +174,7 @@
         Width: =88
         X: =450
         Y: =88
-        ZIndex: =3
+        ZIndex: =2
 
     IconEdit1 As icon.Edit:
         AccessibleLabel: =Self.Tooltip
@@ -191,32 +192,21 @@
         Width: =88
         X: =514
         Y: =88
-        ZIndex: =4
-
-    Button1 As button:
-        Fill: =RGBA(0, 159, 218, 80%)
-        Height: =62
-        OnSelect: =Navigate(Calendar, ScreenTransition.None)
-        Size: =24
-        Text: ="Book"
-        Width: =187
-        X: =226
-        Y: =1061
-        ZIndex: =5
+        ZIndex: =3
 
     Icon2 As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         Y: =393
-        ZIndex: =6
+        ZIndex: =4
 
     Icon3 As icon.ArrowRight:
         Icon: =Icon.ArrowRight
         X: =558
         Y: =393
-        ZIndex: =7
+        ZIndex: =5
 
     navbar_4 As navbar:
-        ZIndex: =8
+        ZIndex: =6
 
     IconBackarrow1 As icon.ChevronLeft:
         AccessibleLabel: =Self.Tooltip
@@ -228,5 +218,62 @@
         Width: =60
         X: =470
         Y: =18
+        ZIndex: =7
+
+    Container1_5 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =8
+
+        Icon17_5 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Client)
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_5 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_5 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: |-
+                =Switch(
+                true,
+                isAdminList, Navigate(Admin),
+                Navigate(StartingPage)
+                )
+            Tooltip: ="Admin"
+            ZIndex: =3
+
+    Rectangle3 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Width: =640
+        Y: =918
         ZIndex: =9
+
+    Button1 As button:
+        Fill: =RGBA(0, 159, 218, 80%)
+        Height: =62
+        OnSelect: =Navigate(Calendar, ScreenTransition.None)
+        Size: =24
+        Text: ="Book"
+        Width: =187
+        X: =217
+        Y: =937
+        ZIndex: =10
 

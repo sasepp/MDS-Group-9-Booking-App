@@ -157,30 +157,19 @@
                 Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 5
                 ZIndex: =2
 
-    Button1_1 As button:
-        Fill: =RGBA(0, 159, 218, 80%)
-        Height: =62
-        OnSelect: =Navigate(Calendar, ScreenTransition.None)
-        Size: =24
-        Text: ="Book"
-        Width: =187
-        X: =226
-        Y: =1061
-        ZIndex: =2
-
     Icon2_1 As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         Y: =393
-        ZIndex: =3
+        ZIndex: =2
 
     Icon3_1 As icon.ArrowRight:
         Icon: =Icon.ArrowRight
         X: =558
         Y: =393
-        ZIndex: =4
+        ZIndex: =3
 
     navbar_5 As navbar:
-        ZIndex: =5
+        ZIndex: =4
 
     IconBackarrow1_1 As icon.ChevronLeft:
         AccessibleLabel: =Self.Tooltip
@@ -193,5 +182,62 @@
         Width: =60
         X: =470
         Y: =18
+        ZIndex: =5
+
+    Container1_6 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
         ZIndex: =6
+
+        Icon17_6 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Client)
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_6 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_6 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: |-
+                =Switch(
+                true,
+                isAdminList, Navigate(Admin),
+                Navigate(StartingPage)
+                )
+            Tooltip: ="Admin"
+            ZIndex: =3
+
+    Rectangle5 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Width: =640
+        Y: =918
+        ZIndex: =7
+
+    Button1_1 As button:
+        Fill: =RGBA(0, 159, 218, 80%)
+        Height: =62
+        OnSelect: =Navigate(Calendar, ScreenTransition.None)
+        Size: =24
+        Text: ="Book"
+        Width: =187
+        X: =217
+        Y: =937
+        ZIndex: =8
 
