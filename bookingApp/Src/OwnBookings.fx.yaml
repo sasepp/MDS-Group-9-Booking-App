@@ -20,7 +20,7 @@ OwnBookings As screen:
         Text: ="My bookings"
         Width: =560
         X: =40
-        Y: =164
+        Y: =80
         ZIndex: =3
 
     Button3_1 As button:
@@ -41,7 +41,7 @@ OwnBookings As screen:
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =312
-        Y: =273
+        Y: =150
         ZIndex: =5
 
         Separator4_8 As rectangle:
@@ -164,7 +164,7 @@ OwnBookings As screen:
         Visible: =isAdminList
         Width: =280
         X: =180
-        Y: =911
+        Y: =929
         ZIndex: =6
 
     Container1_9 As groupContainer.horizontalAutoLayoutContainer:
@@ -182,7 +182,12 @@ OwnBookings As screen:
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Home
-            OnSelect: =Navigate(Client)
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
             Tooltip: ="Catalogue"
             ZIndex: =1
 
@@ -198,12 +203,7 @@ OwnBookings As screen:
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Person
-            OnSelect: |-
-                =Switch(
-                true,
-                isAdminList, Navigate(Admin),
-                Navigate(StartingPage)
-                )
-            Tooltip: ="Admin"
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
             ZIndex: =3
 

@@ -12,6 +12,7 @@ StartingPage As screen:
         Fill: =RGBA(241, 244, 249, 1)
         Height: =186
         OnSelect: =Navigate(Client)
+        Tooltip: ="Click here to open the app"
         Width: =573
         X: =32
         Y: =544
@@ -71,9 +72,12 @@ StartingPage As screen:
         ZIndex: =13
 
     Button5 As button:
+        Fill: =RGBA(0, 174, 239, 1)
         Height: =70
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
         OnSelect: |-
             =Launch("https://login.microsoftonline.com/common/oauth2/logout");
+        PressedFill: =RGBA(240, 120, 170, 1)
         Size: =24
         Text: ="Logout"
         Width: =280

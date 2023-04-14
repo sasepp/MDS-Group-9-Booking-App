@@ -184,6 +184,24 @@
         Y: =18
         ZIndex: =5
 
+    Rectangle5 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Width: =640
+        Y: =918
+        ZIndex: =7
+
+    Button1_1 As button:
+        Fill: =RGBA(0, 159, 218, 80%)
+        Height: =62
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+        OnSelect: =Navigate(Calendar, ScreenTransition.None)
+        Size: =24
+        Text: ="Book"
+        Width: =187
+        X: =217
+        Y: =937
+        ZIndex: =8
+
     Container1_6 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
         Height: =118
@@ -193,13 +211,18 @@
         LayoutMode: =LayoutMode.Auto
         Width: =640
         Y: =1018
-        ZIndex: =6
+        ZIndex: =9
 
         Icon17_6 As icon.Home:
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Home
-            OnSelect: =Navigate(Client)
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
             Tooltip: ="Catalogue"
             ZIndex: =1
 
@@ -215,29 +238,7 @@
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Person
-            OnSelect: |-
-                =Switch(
-                true,
-                isAdminList, Navigate(Admin),
-                Navigate(StartingPage)
-                )
-            Tooltip: ="Admin"
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
             ZIndex: =3
-
-    Rectangle5 As rectangle:
-        Fill: =RGBA(255, 255, 255, 1)
-        Width: =640
-        Y: =918
-        ZIndex: =7
-
-    Button1_1 As button:
-        Fill: =RGBA(0, 159, 218, 80%)
-        Height: =62
-        OnSelect: =Navigate(Calendar, ScreenTransition.None)
-        Size: =24
-        Text: ="Book"
-        Width: =187
-        X: =217
-        Y: =937
-        ZIndex: =8
 
