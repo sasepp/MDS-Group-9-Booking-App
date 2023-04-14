@@ -54,6 +54,46 @@
     navbar_3 As navbar:
         ZIndex: =9
 
+    Container1_1 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =20
+
+        Icon17_1 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Client)
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_1 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_1 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: |-
+                =Switch(
+                true,
+                isAdminList, Navigate(Admin),
+                Navigate(StartingPage)
+                )
+            Tooltip: ="Admin"
+            ZIndex: =3
+
     Group2 As group:
         Height: =5
         Width: =5

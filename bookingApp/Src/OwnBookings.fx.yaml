@@ -32,12 +32,12 @@ OwnBookings As screen:
         Text: ="Browse items"
         Width: =280
         X: =180
-        Y: =993
+        Y: =841
         ZIndex: =4
 
     "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Height: =708
-        Items: =Filter('bookings', user.DisplayName=varUser.FullName)
+        Items: =Filter(bookings, user.DisplayName=varUser.FullName)
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =312
@@ -164,6 +164,46 @@ OwnBookings As screen:
         Visible: =isAdminList
         Width: =280
         X: =180
-        Y: =1063
+        Y: =911
         ZIndex: =6
+
+    Container1_9 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =7
+
+        Icon17_9 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Client)
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_9 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_9 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: |-
+                =Switch(
+                true,
+                isAdminList, Navigate(Admin),
+                Navigate(StartingPage)
+                )
+            Tooltip: ="Admin"
+            ZIndex: =3
 

@@ -23,8 +23,8 @@ Calendar As screen:
             Items: =["00", "15", "30", "45"]
             Size: =16
             Width: =127
-            X: =444
-            Y: =955
+            X: =445
+            Y: =858
             ZIndex: =1
 
         endHourPicker_2 As dropdown:
@@ -33,8 +33,8 @@ Calendar As screen:
             Items: =["09","10", "11", "12", "13", "14", "15", "16",]
             Size: =16
             Width: =127
-            X: =294
-            Y: =955
+            X: =295
+            Y: =858
             ZIndex: =2
 
         startMinPicker_2 As dropdown:
@@ -42,8 +42,8 @@ Calendar As screen:
             Items: =["00", "15", "30", "45"]
             Size: =16
             Width: =131
-            X: =440
-            Y: =823
+            X: =441
+            Y: =726
             ZIndex: =3
 
         startHourPicker_2 As dropdown:
@@ -52,24 +52,24 @@ Calendar As screen:
             Items: =["09","10", "11", "12", "13", "14", "15", "16",]
             Size: =16
             Width: =124
-            X: =297
-            Y: =823
+            X: =298
+            Y: =726
             ZIndex: =4
 
         startDatePicker_2 As datepicker:
             Height: =50
             Size: =16
             Width: =210
-            X: =67
-            Y: =823
+            X: =68
+            Y: =726
             ZIndex: =5
 
         endDatePicker_2 As datepicker:
             Height: =50
             Size: =16
             Width: =210
-            X: =67
-            Y: =955
+            X: =68
+            Y: =858
             ZIndex: =6
 
         endTimeLabel_2 As label:
@@ -79,8 +79,8 @@ Calendar As screen:
             Text: |-
                 ="Ending time:"
             Width: =504
-            X: =67
-            Y: =905
+            X: =68
+            Y: =808
             ZIndex: =7
 
         startTimeLabel_2 As label:
@@ -90,8 +90,8 @@ Calendar As screen:
             Text: |-
                 ="Starting time:"
             Width: =504
-            X: =67
-            Y: =773
+            X: =68
+            Y: =676
             ZIndex: =8
 
     itemDropdown As dropdown:
@@ -112,8 +112,8 @@ Calendar As screen:
         Size: =24
         Text: ="Book"
         Width: =187
-        X: =225
-        Y: =1037
+        X: =226
+        Y: =944
         ZIndex: =16
 
     calendarElement As group:
@@ -125,14 +125,14 @@ Calendar As screen:
 
         calendarBackground_2 As rectangle:
             Fill: =RGBA(240, 240, 240, 1)
-            Height: =611
+            Height: =517
             Width: =640
             Y: =138
             ZIndex: =9
 
         CalendarGrid_2 As gallery.galleryVertical:
             BorderThickness: =1
-            Height: =468
+            Height: =396
             Items: |-
                 =ForAll( 
                     Sequence(42), 
@@ -149,10 +149,10 @@ Calendar As screen:
             Layout: =Layout.Vertical
             TemplatePadding: =0
             TemplateSize: =Self.Height / 6
-            Width: =543
+            Width: =560
             WrapCount: =7
-            X: =48
-            Y: =261
+            X: =50
+            Y: =242
             ZIndex: =10
 
             calendarDayLabel_2 As label:
@@ -216,14 +216,14 @@ Calendar As screen:
         weekdays As gallery.galleryHorizontal:
             BorderThickness: =0.5
             Fill: =RGBA(93, 216, 201, 20%)
-            Height: =43
+            Height: =36
             Items: =Calendar.WeekdaysShort()
             ShowScrollbar: =false
             TemplatePadding: =
             TemplateSize: =Self.Width/7
-            Width: =543
-            X: =48
-            Y: =218
+            Width: =560
+            X: =50
+            Y: =205
             ZIndex: =11
 
             weekdayLabel_2 As label:
@@ -237,13 +237,13 @@ Calendar As screen:
                 ZIndex: =1
 
         monthSelector_2 As groupContainer.horizontalAutoLayoutContainer:
-            Height: =66
+            Height: =56
             LayoutAlignItems: =LayoutAlignItems.Center
             LayoutJustifyContent: =LayoutJustifyContent.Center
             LayoutMode: =LayoutMode.Auto
-            Width: =300
-            X: =48
-            Y: =152
+            Width: =309
+            X: =50
+            Y: =150
             ZIndex: =12
 
             prevMonth_2 As icon.ChevronLeft:
@@ -288,7 +288,7 @@ Calendar As screen:
                 ZIndex: =3
 
         currentDaySelect_2 As button:
-            Height: =39
+            Height: =34
             OnSelect: |-
                 =Set(varFirstDayOfMonth, 
                     Date(
@@ -303,8 +303,48 @@ Calendar As screen:
             RadiusTopRight: =5
             Size: =16
             Text: ="Today"
-            Width: =124
-            X: =467
-            Y: =166
+            Width: =128
+            X: =482
+            Y: =162
             ZIndex: =13
+
+    Container1_3 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =17
+
+        Icon17_3 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Client)
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_3 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_3 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: |-
+                =Switch(
+                true,
+                isAdminList, Navigate(Admin),
+                Navigate(StartingPage)
+                )
+            Tooltip: ="Admin"
+            ZIndex: =3
 

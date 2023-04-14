@@ -70,3 +70,14 @@ StartingPage As screen:
     navbar_12 As navbar:
         ZIndex: =13
 
+    Button5 As button:
+        Height: =70
+        OnSelect: |-
+            =Launch("https://login.microsoftonline.com/common/oauth2/logout");
+        Size: =24
+        Text: ="Logout"
+        Width: =280
+        X: =172
+        Y: =907
+        ZIndex: =14
+

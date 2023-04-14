@@ -131,6 +131,7 @@
     "GreatSuccess",
     "OwnBookings",
     "AdminBookings",
-    "StartingPage"
+    "StartingPage",
+    "GlobalBottomTabsScreen"
   ]
 }
