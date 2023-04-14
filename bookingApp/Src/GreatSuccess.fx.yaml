@@ -8,6 +8,7 @@
     iconCheck1 As icon.Check:
         Fill: =RGBA(0, 159, 218, 1)
         Height: =iconCircle1.Height
+        HoverFill: =RGBA(240, 120, 170, 1)
         Icon: =Icon.Check
         PaddingBottom: =Self.PaddingTop
         PaddingLeft: =Self.PaddingTop
@@ -47,7 +48,12 @@
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Home
-            OnSelect: =Navigate(Client)
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
             Tooltip: ="Catalogue"
             ZIndex: =1
 
@@ -63,12 +69,7 @@
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Person
-            OnSelect: |-
-                =Switch(
-                true,
-                isAdminList, Navigate(Admin),
-                Navigate(StartingPage)
-                )
-            Tooltip: ="Admin"
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
             ZIndex: =3
 

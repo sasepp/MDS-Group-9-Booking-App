@@ -42,7 +42,12 @@ BrowseItems As screen:
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Home
-            OnSelect: =Navigate(Client)
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
             Tooltip: ="Catalogue"
             ZIndex: =1
 
@@ -58,12 +63,7 @@ BrowseItems As screen:
             Color: =RGBA(255, 255, 255, 1)
             FillPortions: =1
             Icon: =Icon.Person
-            OnSelect: |-
-                =Switch(
-                true,
-                isAdminList, Navigate(Admin),
-                Navigate(StartingPage)
-                )
-            Tooltip: ="Admin"
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
             ZIndex: =3
 
