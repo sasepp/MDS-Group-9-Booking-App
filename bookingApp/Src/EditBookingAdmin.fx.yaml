@@ -1,4 +1,4 @@
-EditBooking As screen:
+EditBookingAdmin As screen:
 
     Container1_11 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)

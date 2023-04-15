@@ -100,7 +100,7 @@ AdminBookings As screen:
         Icon6 As icon.Edit:
             Color: =RGBA(0, 0, 0, 1)
             Icon: =Icon.Edit
-            OnSelect: =Navigate(EditBooking)
+            OnSelect: =Navigate(EditBookingAdmin)
             X: =429
             Y: =17
             ZIndex: =11

@@ -87,7 +87,7 @@ OwnBookings As screen:
             OnSelect: =Select(Parent)
             Size: =21
             Text: ="By"
-            Width: =259
+            Width: =99
             X: =33
             Y: =133
             ZIndex: =7
@@ -97,19 +97,19 @@ OwnBookings As screen:
             OnSelect: =Select(Parent)
             Size: =21
             Text: ="From"
-            Width: =259
+            Width: =112
             X: =33
             Y: =166
             ZIndex: =8
 
         Label6_11 As label:
-            Height: =54
+            Height: =46
             OnSelect: =Select(Parent)
             Size: =21
             Text: ="To"
-            Width: =259
+            Width: =112
             X: =33
-            Y: =198
+            Y: =205
             ZIndex: =9
 
         Image3_2 As image:
@@ -125,7 +125,7 @@ OwnBookings As screen:
             Color: =RGBA(0, 0, 0, 1)
             DisabledBorderColor: =RGBA(0, 159, 218, 1)
             Icon: =Icon.Edit
-            OnSelect: =Navigate(EditBooking)
+            OnSelect: =Navigate(EditBookingClient)
             X: =420
             Y: =17
             ZIndex: =11
