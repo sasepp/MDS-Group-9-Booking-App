@@ -4,9 +4,10 @@ AdminBookings As screen:
 
     "Gallery4_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =863
+        Height: =760
         Items: =bookings
         Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
         TemplateSize: =312
         Y: =258
@@ -15,17 +16,9 @@ AdminBookings As screen:
         Rectangle1 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
             Height: =265
-            OnSelect: =Select(Parent)
             Width: =594
             X: =23
             ZIndex: =1
-
-        Separator4_7 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =2
 
         Label1_1 As label:
             Height: =97
@@ -40,7 +33,7 @@ AdminBookings As screen:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.user.DisplayName
+            Text: =ThisItem.User.DisplayName
             Width: =259
             X: =161
             Y: =133
@@ -50,7 +43,7 @@ AdminBookings As screen:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.startDate
+            Text: =ThisItem.'Start Date'
             Width: =259
             X: =161
             Y: =166
@@ -60,7 +53,7 @@ AdminBookings As screen:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.endDate
+            Text: =ThisItem.'End Date'
             Width: =259
             X: =161
             Y: =194
@@ -97,51 +90,61 @@ AdminBookings As screen:
             ZIndex: =9
 
         Image3 As image:
-            Height: =116
+            Height: =110
             OnSelect: =Select(Parent)
-            Width: =112
+            Width: =110
             X: =33
             Y: =10
             ZIndex: =10
 
         Icon6 As icon.Edit:
             Color: =RGBA(0, 0, 0, 1)
-            Height: =80
             Icon: =Icon.Edit
-            Width: =80
+            OnSelect: =Navigate(EditBooking)
             X: =429
             Y: =17
             ZIndex: =11
 
         Icon7 As icon.CancelBadge:
             Color: =RGBA(0, 0, 0, 1)
-            Height: =80
             Icon: =Icon.Trash
-            OnSelect: =Select(Parent)
-            Width: =80
+            OnSelect: |-
+                =Remove(bookings,ThisItem)
+                
+                 
             X: =525
             Y: =17
             ZIndex: =12
 
     Item As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
         Default: =""
         Height: =43
+        HoverFill: =
         Items: =bookings
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
         Width: =201
         X: =12
         Y: =136
-        ZIndex: =14
+        ZIndex: =5
 
     Item_1 As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
         Default: ="Item"
         Height: =43
-        Items: =bookings.startDate
+        HoverFill: =
+        Items: =bookings.'Start Date'
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
         Width: =201
         X: =235
         Y: =136
-        ZIndex: =15
+        ZIndex: =6
 
     Label2 As label:
         FontWeight: =FontWeight.Bold
@@ -151,44 +154,7 @@ AdminBookings As screen:
             ="Filter:"
         Width: =560
         Y: =66
-        ZIndex: =16
-
-    Group1_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =18
-        ZIndex: =16
-
-        TextSearchBox1_1 As text:
-            Align: =TextPosition.Left
-            Default: =""
-            DelayOutput: =true
-            Height: =68
-            HintText: ="Search items"
-            PaddingLeft: =70
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =7
-            RadiusTopLeft: =0
-            RadiusTopRight: =7
-            Size: =21
-            Width: =Parent.Width
-            Y: =195
-            ZIndex: =12
-
-        SearchIcon1_1 As icon.Search:
-            Color: =RGBA(191, 190, 190, 1)
-            Height: =Self.Width
-            Icon: =Icon.Search
-            PaddingBottom: =14
-            PaddingLeft: =14
-            PaddingRight: =14
-            PaddingTop: =14
-            Tooltip: ="Search"
-            Width: =TextSearchBox1_1.Height
-            X: =TextSearchBox1_1.X
-            Y: =195
-            ZIndex: =13
+        ZIndex: =7
 
     Label5 As label:
         Align: =Align.Right
@@ -198,7 +164,7 @@ AdminBookings As screen:
         Width: =560
         X: =68
         Y: =66
-        ZIndex: =17
+        ZIndex: =8
 
     Container1_10 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
@@ -209,7 +175,7 @@ AdminBookings As screen:
         LayoutMode: =LayoutMode.Auto
         Width: =640
         Y: =1018
-        ZIndex: =18
+        ZIndex: =10
 
         Icon17_10 As icon.Home:
             Color: =RGBA(255, 255, 255, 1)
@@ -239,4 +205,41 @@ AdminBookings As screen:
             OnSelect: =Navigate(StartingPage)
             Tooltip: ="Profile"
             ZIndex: =3
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =18
+        ZIndex: =16
+
+        TextSearchBox1_1 As text:
+            Align: =TextPosition.Left
+            Default: =""
+            DelayOutput: =true
+            Height: =68
+            HintText: ="Search items"
+            PaddingLeft: =70
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =7
+            RadiusTopLeft: =0
+            RadiusTopRight: =7
+            Size: =21
+            Width: =Parent.Width
+            Y: =195
+            ZIndex: =3
+
+        SearchIcon1_1 As icon.Search:
+            Color: =RGBA(191, 190, 190, 1)
+            Height: =Self.Width
+            Icon: =Icon.Search
+            PaddingBottom: =14
+            PaddingLeft: =14
+            PaddingRight: =14
+            PaddingTop: =14
+            Tooltip: ="Search"
+            Width: =TextSearchBox1_1.Height
+            X: =TextSearchBox1_1.X
+            Y: =195
+            ZIndex: =4
 

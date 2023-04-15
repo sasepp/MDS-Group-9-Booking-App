@@ -1,15 +1,6 @@
 OwnBookings As screen:
     Fill: =RGBA(255, 255, 255, 1)
 
-    Rectangle1_2 As rectangle:
-        Fill: =RGBA(241, 244, 249, 1)
-        Height: =265
-        OnSelect: =
-        Width: =594
-        X: =23
-        Y: =273
-        ZIndex: =1
-
     navbar_9 As navbar:
         ZIndex: =2
 
@@ -32,24 +23,25 @@ OwnBookings As screen:
         Text: ="Browse items"
         Width: =280
         X: =180
-        Y: =841
+        Y: =918
         ZIndex: =4
 
     "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =708
-        Items: =Filter(bookings, user.DisplayName=varUser.FullName)
+        Height: =740
+        Items: =Filter(bookings, User.DisplayName=varUser.FullName)
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =312
         Y: =150
         ZIndex: =5
 
-        Separator4_8 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =5
+        Rectangle1_3 As rectangle:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =280
+            OnSelect: =
+            Width: =594
+            X: =23
+            ZIndex: =2
 
         Label1_2 As label:
             Height: =97
@@ -58,37 +50,37 @@ OwnBookings As screen:
             Text: =ThisItem.Title
             Width: =253
             X: =161
-            ZIndex: =6
+            ZIndex: =3
 
         Label6_3 As label:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.user.DisplayName
+            Text: =ThisItem.User.DisplayName
             Width: =259
             X: =161
             Y: =133
-            ZIndex: =9
+            ZIndex: =4
 
         Label6_4 As label:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.startDate
+            Text: =ThisItem.'Start Date'
             Width: =259
             X: =161
             Y: =166
-            ZIndex: =10
+            ZIndex: =5
 
         Label6_9 As label:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.endDate
+            Text: =ThisItem.'End Date'
             Width: =259
             X: =161
             Y: =194
-            ZIndex: =11
+            ZIndex: =6
 
         Label6_8 As label:
             Height: =54
@@ -98,7 +90,7 @@ OwnBookings As screen:
             Width: =259
             X: =33
             Y: =133
-            ZIndex: =12
+            ZIndex: =7
 
         Label6_10 As label:
             Height: =54
@@ -108,7 +100,7 @@ OwnBookings As screen:
             Width: =259
             X: =33
             Y: =166
-            ZIndex: =13
+            ZIndex: =8
 
         Label6_11 As label:
             Height: =54
@@ -118,7 +110,7 @@ OwnBookings As screen:
             Width: =259
             X: =33
             Y: =198
-            ZIndex: =14
+            ZIndex: =9
 
         Image3_2 As image:
             Height: =116
@@ -126,45 +118,41 @@ OwnBookings As screen:
             Width: =112
             X: =33
             Y: =10
-            ZIndex: =15
+            ZIndex: =10
 
         Icon4 As icon.Edit:
             BorderColor: =RGBA(0, 159, 218, 1)
             Color: =RGBA(0, 0, 0, 1)
             DisabledBorderColor: =RGBA(0, 159, 218, 1)
-            Height: =80
             Icon: =Icon.Edit
-            OnSelect: =
-            Width: =80
+            OnSelect: =Navigate(EditBooking)
             X: =420
             Y: =17
-            ZIndex: =16
+            ZIndex: =11
 
         Icon5 As icon.CancelBadge:
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(0, 0, 0, 1)
-            Height: =80
             Icon: =Icon.Trash
             OnSelect: =Remove(bookings,ThisItem)
-            Width: =80
             X: =523
             Y: =17
-            ZIndex: =17
+            ZIndex: =12
 
     Button3_2 As button:
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
-        Height: =70
+        Height: =72
         HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
         OnSelect: =Navigate(AdminBookings, ScreenTransition.None)
         Size: =24
-        Text: ="Admin bookings"
+        Text: ="Admin"
         Underline: =true
         Visible: =isAdminList
-        Width: =280
-        X: =180
-        Y: =929
+        Width: =125
+        X: =492
+        Y: =78
         ZIndex: =6
 
     Container1_9 As groupContainer.horizontalAutoLayoutContainer:

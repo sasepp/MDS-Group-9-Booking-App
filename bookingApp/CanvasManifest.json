@@ -132,6 +132,7 @@
     "OwnBookings",
     "AdminBookings",
     "StartingPage",
-    "GlobalBottomTabsScreen"
+    "GlobalBottomTabsScreen",
+    "EditBooking"
   ]
 }

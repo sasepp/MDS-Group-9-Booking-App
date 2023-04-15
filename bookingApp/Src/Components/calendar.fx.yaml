@@ -98,7 +98,7 @@ calendar As CanvasComponent:
 
     weekdaysGrid_1 As gallery.galleryHorizontal:
         BorderThickness: =0.5
-        Fill: =RGBA(93, 216, 201, 20%)
+        Fill: =RGBA(0, 174, 239, 100)
         Height: |
             =45
         Items: =Calendar.WeekdaysShort()
@@ -113,6 +113,7 @@ calendar As CanvasComponent:
         weekdayLabel_1 As label:
             Align: =Align.Center
             BorderThickness: =
+            Color: =RGBA(250, 250, 250, 1)
             Height: =Parent.Height
             OnSelect: =Select(Parent)
             Size: =16
@@ -172,6 +173,7 @@ calendar As CanvasComponent:
             ZIndex: =3
 
     currentDaySelect_1 As button:
+        Fill: =RGBA(0, 174, 239, 100)
         Height: =41
         OnSelect: |-
             =Set(varFirstDayOfMonth, 
