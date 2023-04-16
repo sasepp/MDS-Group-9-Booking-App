@@ -1,4 +1,4 @@
-"GreatSuccess As screen.'phoneLayout_Success_ver3.0'":
+"GreatSuccessAdmin As screen.'phoneLayout_Success_ver3.0'":
 
     iconCircle1 As circle.Circle:
         X: =Parent.Width/2 - Self.Width/2
@@ -85,12 +85,7 @@
         Height: =70
         HoverColor: =RGBA(0, 0, 0, 1)
         OnTimerEnd: |-
-            =Switch(
-                true,
-                isAdminList,
-                Navigate(AdminBookings),
-                Navigate(OwnBookings)
-            );
+            =Navigate(AdminBookings);
             Set(
                 startTimer,
                 false

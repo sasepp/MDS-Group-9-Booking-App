@@ -118,7 +118,7 @@ Calendar As screen:
         Fill: =RGBA(0, 174, 239, 100)
         Height: =62
         HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
-        OnSelect: =Navigate(GreatSuccess, ScreenTransition.None)
+        OnSelect: =Navigate(GreatSuccessAdmin, ScreenTransition.None)
         Size: =24
         Text: ="Book"
         Width: =187
