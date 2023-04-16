@@ -206,6 +206,18 @@ AdminBookings As screen:
             Tooltip: ="Profile"
             ZIndex: =3
 
+    Label4_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =24
+        Text: ="Admin bookings"
+        Width: =344
+        X: =131
+        Y: =5
+        ZIndex: =11
+
     Group1_1 As group:
         Height: =5
         Width: =5

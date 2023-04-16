@@ -48,7 +48,7 @@ EditBookingAdmin As screen:
         Height: =378
         Item: =Gallery4_7.Selected
         Width: =640
-        Y: =635
+        Y: =462
         ZIndex: =3
 
         startDate_DataCard1 As typedDataCard.dateTimeEditCard:
@@ -328,8 +328,8 @@ EditBookingAdmin As screen:
         TabIndex: =0
         Tooltip: ="Cancel item"
         Width: =88
-        X: =432
-        Y: =80
+        X: =218
+        Y: =902
         ZIndex: =5
 
     IconAccept1_1 As icon.Check:
@@ -337,7 +337,7 @@ EditBookingAdmin As screen:
         Color: =RGBA(0, 0, 0, 1)
         Height: =88
         Icon: =Icon.Check
-        OnSelect: =SubmitForm(EditBookingForm);Navigate(GreatSuccess)
+        OnSelect: =SubmitForm(EditBookingForm);Navigate(GreatSuccess); Set(startTimer, true)
         PaddingBottom: =22
         PaddingLeft: =22
         PaddingRight: =22
@@ -345,13 +345,13 @@ EditBookingAdmin As screen:
         TabIndex: =0
         Tooltip: ="Submit item"
         Width: =88
-        X: =520
-        Y: =80
+        X: =306
+        Y: =902
         ZIndex: =6
 
     DisplayBookingForm As formViewer:
         DataSource: =bookings
-        Height: =480
+        Height: =340
         Item: =Gallery4_7.Selected
         Width: =640
         Y: =155
@@ -404,6 +404,7 @@ EditBookingAdmin As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
+            Visible: =false
             Width: =640
             X: =0
             Y: =1
@@ -442,6 +443,7 @@ EditBookingAdmin As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
+            Visible: =false
             Width: =640
             X: =0
             Y: =2

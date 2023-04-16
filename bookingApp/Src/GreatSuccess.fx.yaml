@@ -24,7 +24,10 @@
         AutoHeight: =true
         Height: =iconCircle1.Height
         Size: =21
-        Text: ="Thank you for your reservation!"
+        Text: |-
+            ="Thank you for your reservation!
+            
+            Redirect to Bookings in:"
         Width: =Parent.Width * 0.75
         X: =Parent.Width/2 - Self.Width/2
         Y: =iconCheck1.Y + iconCheck1.Height + 100
@@ -72,4 +75,31 @@
             OnSelect: =Navigate(StartingPage)
             Tooltip: ="Profile"
             ZIndex: =3
+
+    Timer1 As timer:
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        Duration: =3000
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        HoverColor: =RGBA(0, 0, 0, 1)
+        OnTimerEnd: |-
+            =Switch(
+                true,
+                isAdminList,
+                Navigate(AdminBookings),
+                Navigate(OwnBookings)
+            );
+            Set(
+                startTimer,
+                false
+            )
+        Size: =30
+        Start: =startTimer
+        Text: =Text(Time(0, 0, Timer1.Duration-Timer1.Value), "ss")
+        Width: =280
+        X: =180
+        Y: =705
+        ZIndex: =6
 

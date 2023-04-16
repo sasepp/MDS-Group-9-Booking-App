@@ -6,25 +6,14 @@ OwnBookings As screen:
 
     Label4 As label:
         Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
         Height: =70
         Size: =24
         Text: ="My bookings"
-        Width: =560
-        X: =40
-        Y: =80
+        Width: =282
+        X: =179
         ZIndex: =3
-
-    Button3_1 As button:
-        Fill: =RGBA(0, 159, 218, 1)
-        Height: =70
-        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
-        OnSelect: =Navigate(Client, ScreenTransition.None)
-        Size: =24
-        Text: ="Browse items"
-        Width: =280
-        X: =180
-        Y: =918
-        ZIndex: =4
 
     "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Height: =740
@@ -151,8 +140,8 @@ OwnBookings As screen:
         Underline: =true
         Visible: =isAdminList
         Width: =125
-        X: =492
-        Y: =78
+        X: =257
+        Y: =80
         ZIndex: =6
 
     Container1_9 As groupContainer.horizontalAutoLayoutContainer:
