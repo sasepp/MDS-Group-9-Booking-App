@@ -27,7 +27,7 @@
         Text: |-
             ="Thank you for your reservation!
             
-            Redirect to Bookings in:"
+            Redirect to Bookings in 3 seconds."
         Width: =Parent.Width * 0.75
         X: =Parent.Width/2 - Self.Width/2
         Y: =iconCheck1.Y + iconCheck1.Height + 100
@@ -97,7 +97,7 @@
             )
         Size: =30
         Start: =startTimer
-        Text: =Text(Time(0, 0, Timer1.Duration-Timer1.Value), "ss")
+        Text: =
         Width: =280
         X: =180
         Y: =705

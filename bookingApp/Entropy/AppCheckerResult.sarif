@@ -5479,19 +5479,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AdminBookings.Item.AccessibleLabel"
+                  "fullyQualifiedName": "AdminBookings.ItemDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AdminBookings.Item.AccessibleLabel",
+                  "fullyQualifiedName": "AdminBookings.ItemDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AdminBookings",
-                "type": "AdminBookings.Item"
+                "type": "AdminBookings.ItemDropdown"
               }
             }
           ],
@@ -5509,19 +5509,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AdminBookings.Item_1.AccessibleLabel"
+                  "fullyQualifiedName": "AdminBookings.FromDateDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AdminBookings.Item_1.AccessibleLabel",
+                  "fullyQualifiedName": "AdminBookings.FromDateDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AdminBookings",
-                "type": "AdminBookings.Item_1"
+                "type": "AdminBookings.FromDateDropdown"
               }
             }
           ],
@@ -5983,6 +5983,66 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "AdminBookings.UserDropdown.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "AdminBookings.UserDropdown.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "AdminBookings",
+                "type": "AdminBookings.UserDropdown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "AdminBookings.ToDateDropdown.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "AdminBookings.ToDateDropdown.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "AdminBookings",
+                "type": "AdminBookings.ToDateDropdown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
         },
         {
           "locations": [

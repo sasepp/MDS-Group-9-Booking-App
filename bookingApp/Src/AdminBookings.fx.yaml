@@ -4,20 +4,20 @@ AdminBookings As screen:
 
     "Gallery4_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =760
+        Height: =634
         Items: =bookings
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
         TemplateSize: =312
-        Y: =258
+        Y: =384
         ZIndex: =2
 
         Rectangle1 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
             Height: =265
             Width: =594
-            X: =23
+            X: =22
             ZIndex: =1
 
         Label1_1 As label:
@@ -116,34 +116,34 @@ AdminBookings As screen:
             Y: =17
             ZIndex: =12
 
-    Item As dropdown:
+    ItemDropdown As dropdown:
         BorderColor: =RGBA(0, 0, 0, 1)
         ChevronBackground: =RGBA(0, 174, 239, 1)
         Default: =""
         Height: =43
         HoverFill: =
-        Items: =bookings
+        Items: =Distinct(bookings,Title)
         PressedFill: =RGBA(0, 0, 0, 0)
         SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
-        Width: =201
-        X: =12
+        Width: =471
+        X: =131
         Y: =136
         ZIndex: =5
 
-    Item_1 As dropdown:
+    FromDateDropdown As dropdown:
         BorderColor: =RGBA(0, 0, 0, 1)
         ChevronBackground: =RGBA(0, 174, 239, 1)
         Default: ="Item"
         Height: =43
         HoverFill: =
-        Items: =bookings.'Start Date'
+        Items: =Distinct(bookings,'Start Date')
         PressedFill: =RGBA(0, 0, 0, 0)
         SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
         Width: =201
-        X: =235
-        Y: =136
+        X: =131
+        Y: =191
         ZIndex: =6
 
     Label2 As label:
@@ -155,16 +155,6 @@ AdminBookings As screen:
         Width: =560
         Y: =66
         ZIndex: =7
-
-    Label5 As label:
-        Align: =Align.Right
-        Height: =70
-        Size: =21
-        Text: ="Manage bookings (ADMIN)"
-        Width: =560
-        X: =68
-        Y: =66
-        ZIndex: =8
 
     Container1_10 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
@@ -218,6 +208,57 @@ AdminBookings As screen:
         Y: =5
         ZIndex: =11
 
+    UserDropdown As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
+        Default: =""
+        Height: =43
+        HoverFill: =
+        Items: =Distinct(bookings,User.DisplayName)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
+        Size: =21
+        Width: =471
+        X: =131
+        Y: =245
+        ZIndex: =12
+
+    Label5 As label:
+        Height: =43
+        Size: =21
+        Text: ="Item"
+        Width: =108
+        X: =23
+        Y: =136
+        ZIndex: =13
+
+    Label5_1 As label:
+        Height: =43
+        Size: =21
+        Text: ="From"
+        Width: =108
+        X: =23
+        Y: =191
+        ZIndex: =14
+
+    Label5_2 As label:
+        Height: =43
+        Size: =21
+        Text: ="To"
+        Width: =90
+        X: =346
+        Y: =191
+        ZIndex: =15
+
+    Label5_3 As label:
+        Height: =43
+        Size: =21
+        Text: ="User"
+        Width: =108
+        X: =23
+        Y: =245
+        ZIndex: =16
+
     Group1_1 As group:
         Height: =5
         Width: =5
@@ -238,7 +279,7 @@ AdminBookings As screen:
             RadiusTopRight: =7
             Size: =21
             Width: =Parent.Width
-            Y: =195
+            Y: =316
             ZIndex: =3
 
         SearchIcon1_1 As icon.Search:
@@ -252,6 +293,21 @@ AdminBookings As screen:
             Tooltip: ="Search"
             Width: =TextSearchBox1_1.Height
             X: =TextSearchBox1_1.X
-            Y: =195
+            Y: =329
             ZIndex: =4
+
+    ToDateDropdown As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
+        Default: ="Item"
+        Height: =43
+        HoverFill: =
+        Items: =Distinct(bookings,'End Date')
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
+        Size: =21
+        Width: =201
+        X: =401
+        Y: =191
+        ZIndex: =17
 
