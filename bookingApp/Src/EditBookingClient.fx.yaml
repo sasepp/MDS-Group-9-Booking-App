@@ -330,7 +330,7 @@ EditBookingClient As screen:
         Tooltip: ="Cancel item"
         Width: =88
         X: =218
-        Y: =767
+        Y: =792
         ZIndex: =5
 
     IconAccept1_2 As icon.Check:
@@ -346,8 +346,8 @@ EditBookingClient As screen:
         TabIndex: =0
         Tooltip: ="Submit item"
         Width: =88
-        X: =317
-        Y: =767
+        X: =319
+        Y: =792
         ZIndex: =6
 
     DisplayBookingForm_1 As formViewer:

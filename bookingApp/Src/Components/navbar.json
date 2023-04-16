@@ -120,7 +120,7 @@
                 "Name": "Image5",
                 "Parent": "butttons",
                 "PersistMetaDataIDKey": false,
-                "PublishOrderIndex": 375,
+                "PublishOrderIndex": 374,
                 "Rules": [
                   {
                     "Category": "Data",
@@ -457,7 +457,7 @@
             "Name": "butttons",
             "Parent": "nav items",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 374,
+            "PublishOrderIndex": 373,
             "Rules": [
               {
                 "Category": "Design",
@@ -760,7 +760,7 @@
             "Name": "Image4",
             "Parent": "nav items",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 376,
+            "PublishOrderIndex": 375,
             "Rules": [
               {
                 "Category": "Data",
@@ -1049,7 +1049,7 @@
         "Name": "nav items",
         "Parent": "navbar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 373,
+        "PublishOrderIndex": 372,
         "Rules": [
           {
             "Category": "Design",

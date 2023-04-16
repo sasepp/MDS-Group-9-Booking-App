@@ -809,88 +809,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AdminBookings.UserDropdown.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AdminBookings.UserDropdown.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 50,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "AdminBookings",
-                "type": "AdminBookings.UserDropdown"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Record"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "AdminBookings.FromDateDropdown.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AdminBookings.FromDateDropdown.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 47,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "AdminBookings",
-                "type": "AdminBookings.FromDateDropdown"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DateTime",
-              "Text"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "AdminBookings.Gallery4_7.galleryTemplate4_7.TemplateFill"
                 }
               ],
@@ -5591,19 +5509,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AdminBookings.FromDateDropdown.AccessibleLabel"
+                  "fullyQualifiedName": "AdminBookings.ToDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AdminBookings.FromDateDropdown.AccessibleLabel",
+                  "fullyQualifiedName": "AdminBookings.ToDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AdminBookings",
-                "type": "AdminBookings.FromDateDropdown"
+                "type": "AdminBookings.ToDropdown"
               }
             }
           ],
@@ -6071,49 +5989,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AdminBookings.UserDropdown.AccessibleLabel"
+                  "fullyQualifiedName": "AdminBookings.FromDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AdminBookings.UserDropdown.AccessibleLabel",
+                  "fullyQualifiedName": "AdminBookings.FromDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AdminBookings",
-                "type": "AdminBookings.UserDropdown"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "AdminBookings.ToDateDropdown.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AdminBookings.ToDateDropdown.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "AdminBookings",
-                "type": "AdminBookings.ToDateDropdown"
+                "type": "AdminBookings.FromDropdown"
               }
             }
           ],
