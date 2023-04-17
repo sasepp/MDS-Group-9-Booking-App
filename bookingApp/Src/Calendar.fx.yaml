@@ -19,6 +19,7 @@ Calendar As screen:
         ZIndex: =14
 
         endMinPicker_2 As dropdown:
+            ChevronBackground: =RGBA(0, 174, 239, 100)
             Height: =50
             Items: =["00", "15", "30", "45"]
             Size: =16
@@ -28,6 +29,7 @@ Calendar As screen:
             ZIndex: =1
 
         endHourPicker_2 As dropdown:
+            ChevronBackground: =RGBA(0, 174, 239, 100)
             Default: =
             Height: =50
             Items: =["09","10", "11", "12", "13", "14", "15", "16",]
@@ -38,6 +40,7 @@ Calendar As screen:
             ZIndex: =2
 
         startMinPicker_2 As dropdown:
+            ChevronBackground: =RGBA(0, 174, 239, 100)
             Height: =50
             Items: =["00", "15", "30", "45"]
             Size: =16
@@ -47,6 +50,7 @@ Calendar As screen:
             ZIndex: =3
 
         startHourPicker_2 As dropdown:
+            ChevronBackground: =RGBA(0, 174, 239, 100)
             Default: =
             Height: =50
             Items: =["09","10", "11", "12", "13", "14", "15", "16",]
@@ -58,7 +62,9 @@ Calendar As screen:
 
         startDatePicker_2 As datepicker:
             Height: =50
+            IconBackground: =RGBA(0, 174, 239, 100)
             Size: =16
+            StartOfWeek: =StartOfWeek.Monday
             Width: =210
             X: =68
             Y: =726
@@ -66,7 +72,9 @@ Calendar As screen:
 
         endDatePicker_2 As datepicker:
             Height: =50
+            IconBackground: =RGBA(0, 174, 239, 100)
             Size: =16
+            StartOfWeek: =StartOfWeek.Monday
             Width: =210
             X: =68
             Y: =858
@@ -95,6 +103,8 @@ Calendar As screen:
             ZIndex: =8
 
     itemDropdown As dropdown:
+        ChevronBackground: =RGBA(0, 174, 239, 100)
+        ChevronFill: =RGBA(250, 250, 250, 1)
         Default: ="item 1"
         Height: =37
         Items: =Equipment
@@ -105,10 +115,10 @@ Calendar As screen:
         ZIndex: =15
 
     Button1_2 As button:
-        Fill: =RGBA(0, 159, 218, 80%)
+        Fill: =RGBA(0, 174, 239, 100)
         Height: =62
         HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
-        OnSelect: =Navigate(GreatSuccess, ScreenTransition.None)
+        OnSelect: =Navigate(GreatSuccessAdmin, ScreenTransition.None)
         Size: =24
         Text: ="Book"
         Width: =187
@@ -174,8 +184,8 @@ Calendar As screen:
                     =Filter(
                         bookings, 
                         itemName = itemDropdown.Selected.Title
-                        And startDate < ThisItem.NextDay
-                        And endDate >= ThisItem.Value  
+                        And 'Start Date' < ThisItem.NextDay
+                        And 'End Date' >= ThisItem.Value  
                     )
                 Layout: =Layout.Vertical
                 TemplateFill: =
@@ -192,9 +202,9 @@ Calendar As screen:
                     Size: =8
                     Text: |-
                         =If(
-                            !IsBlank(ThisItem.startDate)
-                            And !IsBlank(ThisItem.endDate),
-                            Concatenate(Text(ThisItem.startDate, "hh:mm"), " - ", Text(ThisItem.endDate, "hh:mm"))
+                            !IsBlank(ThisItem.'Start Date')
+                            And !IsBlank(ThisItem.'End Date'),
+                            Concatenate(Text(ThisItem.'Start Date', "hh:mm"), " - ", Text(ThisItem.'End Date', "hh:mm"))
                         
                         )
                     Width: =Parent.TemplateWidth
@@ -215,7 +225,7 @@ Calendar As screen:
 
         weekdays As gallery.galleryHorizontal:
             BorderThickness: =0.5
-            Fill: =RGBA(93, 216, 201, 20%)
+            Fill: =RGBA(0, 174, 239, 100)
             Height: =36
             Items: =Calendar.WeekdaysShort()
             ShowScrollbar: =false
@@ -229,6 +239,7 @@ Calendar As screen:
             weekdayLabel_2 As label:
                 Align: =Align.Center
                 BorderThickness: =
+                Color: =RGBA(250, 250, 250, 1)
                 Height: =Parent.Height
                 OnSelect: =Select(Parent)
                 Size: =16
@@ -288,6 +299,7 @@ Calendar As screen:
                 ZIndex: =3
 
         currentDaySelect_2 As button:
+            Fill: =RGBA(0, 174, 239, 100)
             Height: =34
             OnSelect: |-
                 =Set(varFirstDayOfMonth, 

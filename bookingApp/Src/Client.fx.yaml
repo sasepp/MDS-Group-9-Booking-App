@@ -3,7 +3,7 @@
 
     "BrowseGallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnOverlayVariant_ver4.0'":
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =984
+        Height: =866
         Items: =SortByColumns(Filter([@Equipment], StartsWith(Title, TextSearchBox.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
         Layout: =Layout.Vertical
         OnSelect: =Navigate(DetailScreen_Client, ScreenTransition.None)

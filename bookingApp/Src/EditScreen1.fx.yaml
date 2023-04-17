@@ -3,7 +3,7 @@
     EditForm1 As form:
         BorderColor: =RGBA(0, 159, 218, 1)
         DataSource: =[@Equipment]
-        Height: =1056
+        Height: =938
         Item: =BrowseGallery1.Selected
         OnSuccess: =Back()
         Width: =Parent.Width

@@ -4,28 +4,37 @@ AdminBookings As screen:
 
     "Gallery4_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =863
-        Items: =bookings
+        Height: =653
+        Items: |-
+            =SortByColumns(
+                Filter(
+                    bookings,
+                    'Title' = ItemDropdown.Selected.Value,
+                    StartsWith(
+                        User.DisplayName,
+                        TextSearchBox1_1.Text
+                    )
+                ),
+                "Title",
+                If(
+                    SortDescending2,
+                    SortOrder.Descending,
+                    SortOrder.Ascending
+                )
+            )
         Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
         TemplateSize: =312
-        Y: =258
+        Y: =363
         ZIndex: =2
 
         Rectangle1 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
             Height: =265
-            OnSelect: =Select(Parent)
             Width: =594
-            X: =23
+            X: =22
             ZIndex: =1
-
-        Separator4_7 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =2
 
         Label1_1 As label:
             Height: =97
@@ -40,7 +49,7 @@ AdminBookings As screen:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.user.DisplayName
+            Text: =ThisItem.User.DisplayName
             Width: =259
             X: =161
             Y: =133
@@ -50,7 +59,7 @@ AdminBookings As screen:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.startDate
+            Text: =ThisItem.'Start Date'
             Width: =259
             X: =161
             Y: =166
@@ -60,7 +69,7 @@ AdminBookings As screen:
             Height: =54
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.endDate
+            Text: =ThisItem.'End Date'
             Width: =259
             X: =161
             Y: =194
@@ -97,51 +106,46 @@ AdminBookings As screen:
             ZIndex: =9
 
         Image3 As image:
-            Height: =116
+            Height: =110
             OnSelect: =Select(Parent)
-            Width: =112
+            Width: =110
             X: =33
             Y: =10
             ZIndex: =10
 
         Icon6 As icon.Edit:
             Color: =RGBA(0, 0, 0, 1)
-            Height: =80
             Icon: =Icon.Edit
-            Width: =80
+            OnSelect: =Navigate(EditBookingAdmin)
             X: =429
             Y: =17
             ZIndex: =11
 
         Icon7 As icon.CancelBadge:
             Color: =RGBA(0, 0, 0, 1)
-            Height: =80
             Icon: =Icon.Trash
-            OnSelect: =Select(Parent)
-            Width: =80
+            OnSelect: |-
+                =Remove(bookings,ThisItem)
+                
+                 
             X: =525
             Y: =17
             ZIndex: =12
 
-    Item As dropdown:
+    ItemDropdown As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
         Default: =""
         Height: =43
-        Items: =bookings
+        HoverFill: =
+        Items: =Distinct(bookings,Title)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
-        Width: =201
-        X: =12
+        Width: =471
+        X: =131
         Y: =136
-        ZIndex: =14
-
-    Item_1 As dropdown:
-        Default: ="Item"
-        Height: =43
-        Items: =bookings.startDate
-        Size: =21
-        Width: =201
-        X: =235
-        Y: =136
-        ZIndex: =15
+        ZIndex: =5
 
     Label2 As label:
         FontWeight: =FontWeight.Bold
@@ -151,54 +155,7 @@ AdminBookings As screen:
             ="Filter:"
         Width: =560
         Y: =66
-        ZIndex: =16
-
-    Group1_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =18
-        ZIndex: =16
-
-        TextSearchBox1_1 As text:
-            Align: =TextPosition.Left
-            Default: =""
-            DelayOutput: =true
-            Height: =68
-            HintText: ="Search items"
-            PaddingLeft: =70
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =7
-            RadiusTopLeft: =0
-            RadiusTopRight: =7
-            Size: =21
-            Width: =Parent.Width
-            Y: =195
-            ZIndex: =12
-
-        SearchIcon1_1 As icon.Search:
-            Color: =RGBA(191, 190, 190, 1)
-            Height: =Self.Width
-            Icon: =Icon.Search
-            PaddingBottom: =14
-            PaddingLeft: =14
-            PaddingRight: =14
-            PaddingTop: =14
-            Tooltip: ="Search"
-            Width: =TextSearchBox1_1.Height
-            X: =TextSearchBox1_1.X
-            Y: =195
-            ZIndex: =13
-
-    Label5 As label:
-        Align: =Align.Right
-        Height: =70
-        Size: =21
-        Text: ="Manage bookings (ADMIN)"
-        Width: =560
-        X: =68
-        Y: =66
-        ZIndex: =17
+        ZIndex: =7
 
     Container1_10 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
@@ -209,7 +166,7 @@ AdminBookings As screen:
         LayoutMode: =LayoutMode.Auto
         Width: =640
         Y: =1018
-        ZIndex: =18
+        ZIndex: =10
 
         Icon17_10 As icon.Home:
             Color: =RGBA(255, 255, 255, 1)
@@ -239,4 +196,147 @@ AdminBookings As screen:
             OnSelect: =Navigate(StartingPage)
             Tooltip: ="Profile"
             ZIndex: =3
+
+    Label4_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =24
+        Text: ="Admin bookings"
+        Width: =344
+        X: =131
+        Y: =5
+        ZIndex: =11
+
+    Label5 As label:
+        Height: =43
+        Size: =21
+        Text: ="Item"
+        Width: =108
+        X: =23
+        Y: =136
+        ZIndex: =13
+
+    Label5_1 As label:
+        Height: =43
+        Size: =21
+        Text: ="From"
+        Width: =108
+        X: =23
+        Y: =191
+        ZIndex: =14
+
+    Label5_2 As label:
+        Height: =43
+        Size: =21
+        Text: ="To"
+        Width: =90
+        X: =346
+        Y: =191
+        ZIndex: =15
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =18
+        ZIndex: =16
+
+        TextSearchBox1_1 As text:
+            Align: =TextPosition.Left
+            Default: =""
+            DelayOutput: =true
+            Height: =68
+            HintText: ="Search ""created by"" user"
+            PaddingLeft: =70
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =7
+            RadiusTopLeft: =0
+            RadiusTopRight: =7
+            Size: =21
+            Width: =Parent.Width
+            Y: =259
+            ZIndex: =3
+
+        SearchIcon1_1 As icon.Search:
+            Color: =RGBA(191, 190, 190, 1)
+            Height: =Self.Width
+            Icon: =Icon.Search
+            PaddingBottom: =14
+            PaddingLeft: =14
+            PaddingRight: =14
+            PaddingTop: =14
+            Tooltip: ="Search"
+            Width: =TextSearchBox1_1.Height
+            X: =TextSearchBox1_1.X
+            Y: =259
+            ZIndex: =4
+
+    FromDropdown As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
+        Default: =""
+        Height: =43
+        HoverFill: =
+        Items: =Filter(bookings, Title = ItemDropdown.Selected.Value)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
+        Size: =21
+        Width: =201
+        X: =131
+        Y: =191
+        ZIndex: =19
+
+    ToDropdown As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 174, 239, 1)
+        Default: =""
+        Height: =43
+        HoverFill: =
+        Items: =Filter(bookings, Title = ItemDropdown.Selected.Value)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SelectionFill: =RGBA(0, 174, 239, 1)
+        Size: =21
+        Width: =201
+        X: =401
+        Y: =191
+        ZIndex: =20
+
+    IconSortUpDown1_4 As icon.ArrowsUpDown:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =66
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending2: !SortDescending2})
+        PaddingBottom: =10
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: |
+            =10
+        TabIndex: =0
+        Tooltip: =If(SortDescending2, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+        Width: =75
+        X: =549
+        Y: =260
+        ZIndex: =22
+
+    IconRefresh1_4 As icon.Reload:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =66
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@bookings])
+        PaddingBottom: =10
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: |
+            =10
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =75
+        X: =475
+        Y: =259
+        ZIndex: =23
 

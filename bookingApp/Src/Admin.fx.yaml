@@ -2,7 +2,7 @@
 
     "BrowseGallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnOverlayVariant_ver4.0'":
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =984
+        Height: =866
         Items: =SortByColumns(Filter([@Equipment], StartsWith(Title, TextSearchBox_1.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
         Layout: =Layout.Vertical
         OnSelect: =Navigate(DetailScreen_Admin, ScreenTransition.None)
@@ -43,13 +43,6 @@
             X: =12
             Y: =255
             ZIndex: =3
-
-    Rectangle11 As rectangle:
-        Fill: =RGBA(0, 159, 218, 1)
-        Height: =2
-        Width: =Parent.Width
-        Y: =TextSearchBox_1.Y + TextSearchBox_1.Height
-        ZIndex: =8
 
     navbar_3 As navbar:
         ZIndex: =9

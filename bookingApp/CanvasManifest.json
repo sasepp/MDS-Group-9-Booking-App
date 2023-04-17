@@ -102,15 +102,15 @@
     "DocumentType": "App",
     "EnableInstrumentation": false,
     "FileID": "f414a7af-deca-4aa0-bf33-b35bc3b94c46",
-    "Id": "afb92a2f-91a0-45aa-9ebb-0e9ab763b015",
+    "Id": "a55c2703-dbdb-40f8-8ac8-d3774673f60d",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
     "ManualOfflineProfileId": "",
-    "Name": "Digital Living Lab Equipment v_3",
+    "Name": "Digital Living Lab Equipment v_6",
     "OriginatingVersion": "1.326"
   },
   "PublishInfo": {
-    "AppName": "Digital Living Lab Equipment v_3",
+    "AppName": "Digital Living Lab Equipment v_6",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",
@@ -128,10 +128,13 @@
     "DetailScreen_Admin",
     "DetailScreen_Client",
     "EditScreen1",
-    "GreatSuccess",
+    "GreatSuccessAdmin",
+    "GreatSuccessClient",
     "OwnBookings",
     "AdminBookings",
     "StartingPage",
-    "GlobalBottomTabsScreen"
+    "GlobalBottomTabsScreen",
+    "EditBookingAdmin",
+    "EditBookingClient"
   ]
 }
