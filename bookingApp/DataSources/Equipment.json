@@ -32,8 +32,10 @@
       "ID": "ID",
       "Image": "Image",
       "ImageLibrary": "Image Library",
+      "isAvailable": "isAvailable",
       "Longdescription": "Description",
       "Modified": "Modified",
+      "OData__ColorTag": "Color Tag",
       "Title": "Title",
       "Website": "Website/Manual"
     },

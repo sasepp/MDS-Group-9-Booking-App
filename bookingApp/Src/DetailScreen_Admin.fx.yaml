@@ -220,24 +220,6 @@
         Y: =18
         ZIndex: =7
 
-    Rectangle3 As rectangle:
-        Fill: =RGBA(255, 255, 255, 1)
-        Width: =640
-        Y: =918
-        ZIndex: =9
-
-    Button1 As button:
-        Fill: =RGBA(0, 159, 218, 80%)
-        Height: =62
-        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
-        OnSelect: =Navigate(Calendar, ScreenTransition.None)
-        Size: =24
-        Text: ="Book"
-        Width: =187
-        X: =217
-        Y: =937
-        ZIndex: =10
-
     Container1_5 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
         Height: =118
@@ -277,4 +259,41 @@
             OnSelect: =Navigate(StartingPage)
             Tooltip: ="Profile"
             ZIndex: =3
+
+    "'Status bar_1' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =15
+
+        Rectangle5_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Width: =640
+            Y: =938
+            ZIndex: =12
+
+        Button1_4 As button:
+            Fill: =RGBA(0, 159, 218, 80%)
+            Height: =62
+            HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+            OnSelect: =Navigate(Calendar, ScreenTransition.None)
+            Size: =24
+            Text: ="Book"
+            Visible: =LookUp(Equipment, Title = DataCardValue1.Text).isAvailable = true
+            Width: =187
+            X: =39
+            Y: =957
+            ZIndex: =13
+
+        Button6_1 As button:
+            Height: =62
+            HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+            Size: =24
+            Text: |
+                =If(LookUp(Equipment, Title = DataCardValue1.Text).isAvailable, "Available", "Unavailable")
+            Width: =267
+            X: =337
+            Y: =957
+            ZIndex: =14
 

@@ -9,7 +9,7 @@ AdminBookings As screen:
             =SortByColumns(
                 Filter(
                     bookings,
-                    'Title' = ItemDropdown.Selected.Value,
+                    Title = ItemDropdown.Selected.Value,
                     StartsWith(
                         User.DisplayName,
                         TextSearchBox1_1.Text
