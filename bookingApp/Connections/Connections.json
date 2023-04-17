@@ -22,7 +22,8 @@
     },
     "dataSources": [
       "Equipment",
-      "bookings"
+      "bookings",
+      "AdminList"
     ],
     "dependencies": {},
     "dependents": [],

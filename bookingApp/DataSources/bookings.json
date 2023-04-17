@@ -34,6 +34,7 @@
       "id0": "id",
       "image": "image",
       "Modified": "Modified",
+      "OData__ColorTag": "Color Tag",
       "startDate": "Start Date",
       "Title": "Title",
       "user": "User",
