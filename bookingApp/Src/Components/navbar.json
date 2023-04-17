@@ -120,7 +120,7 @@
                 "Name": "Image5",
                 "Parent": "butttons",
                 "PersistMetaDataIDKey": false,
-                "PublishOrderIndex": 233,
+                "PublishOrderIndex": 374,
                 "Rules": [
                   {
                     "Category": "Data",
@@ -457,7 +457,7 @@
             "Name": "butttons",
             "Parent": "nav items",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 232,
+            "PublishOrderIndex": 373,
             "Rules": [
               {
                 "Category": "Design",
@@ -705,7 +705,7 @@
                 "NameMapSourceSchema": "?"
               }
             ],
-            "ControlUniqueId": "74",
+            "ControlUniqueId": "71",
             "DynamicProperties": [
               {
                 "ControlPropertyState": "FillPortions",
@@ -760,7 +760,7 @@
             "Name": "Image4",
             "Parent": "nav items",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 237,
+            "PublishOrderIndex": 375,
             "Rules": [
               {
                 "Category": "Data",
@@ -1049,7 +1049,7 @@
         "Name": "nav items",
         "Parent": "navbar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 231,
+        "PublishOrderIndex": 372,
         "Rules": [
           {
             "Category": "Design",
@@ -1241,7 +1241,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638170972636699796",
+    "LastModifiedTimestamp": "638172136433611581",
     "Name": "navbar",
     "Rules": [
       {
@@ -1300,7 +1300,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638170972636699796",
+  "LastModifiedTimestamp": "638172136433611581",
   "Name": "e05e2b24a7b244858ed88339059c2684",
   "OverridableProperties": {},
   "TemplateOriginalName": "62517df3461e49448f901c08ecca6a02",

@@ -1,4 +1,4 @@
-"GreatSuccess As screen.'phoneLayout_Success_ver3.0'":
+"GreatSuccessAdmin As screen.'phoneLayout_Success_ver3.0'":
 
     iconCircle1 As circle.Circle:
         X: =Parent.Width/2 - Self.Width/2
@@ -24,7 +24,10 @@
         AutoHeight: =true
         Height: =iconCircle1.Height
         Size: =21
-        Text: ="Thank you for your reservation!"
+        Text: |-
+            ="Thank you for your reservation!
+            
+            Redirect to Bookings in 3 seconds."
         Width: =Parent.Width * 0.75
         X: =Parent.Width/2 - Self.Width/2
         Y: =iconCheck1.Y + iconCheck1.Height + 100
@@ -72,4 +75,26 @@
             OnSelect: =Navigate(StartingPage)
             Tooltip: ="Profile"
             ZIndex: =3
+
+    Timer1 As timer:
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        Duration: =3000
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        HoverColor: =RGBA(0, 0, 0, 1)
+        OnTimerEnd: |-
+            =Navigate(AdminBookings);
+            Set(
+                startTimer,
+                false
+            )
+        Size: =30
+        Start: =startTimer
+        Text: =
+        Width: =280
+        X: =180
+        Y: =705
+        ZIndex: =6
 
