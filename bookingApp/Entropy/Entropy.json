@@ -6,6 +6,7 @@
     "Component2": 18,
     "Component2_1": 19,
     "Component3": 20,
+    "Component4": 22,
     "navbar": 21
   },
   "ControlUniqueGuids": {},
@@ -25,6 +26,7 @@
     "Button1_1": 138,
     "Button1_2": 395,
     "Button1_3": 9,
+    "Button2": 403,
     "Button3": 363,
     "Button3_10": 65,
     "Button3_11": 66,
@@ -50,6 +52,7 @@
     "Component2": 42,
     "Component2_1": 48,
     "Component3": 55,
+    "Component4": 402,
     "Container1": 115,
     "Container1_1": 355,
     "Container1_10": 328,
@@ -413,7 +416,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "04/17/2023 14:24:29",
+  "HeaderLastSavedDateTimeUTC": "04/17/2023 15:35:44",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "0ca4291d-b27e-4c57-b908-9ccda49addf5": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/044b3be18e0b48b5ac0026ba25ed48fd\"",
@@ -430,6 +433,7 @@
     "neliotunnus_laurea_rgb": "https://docserverpwaprodneu.blob.core.windows.net/5d32443c-1968-41dd-8881-5fc954ffb8a8-1/resource/Assets0Images0de38a96c-b83b-4988-aba7-2688300441ea.png?sv=2018-03-28&sr=b&sig=Og8hDtBH7hUHhOJuGxVN2UYCPektzwvNfjXZ%2FTJTJ7M%3D&spr=https&se=2023-04-18T14%3A39%3A00Z&sp=r"
   },
   "OrderComponentMetadata": {
+    "03417fbb54fd4161b8b1d23aab85b5d2": 7,
     "67423b3d4ad7425781cc24ca627f3d09": 4,
     "74075ecc25b14a16b2705b5b76712324": 3,
     "75cd3cbe2e974bc98ba87c8c2de854e7": 0,
@@ -439,6 +443,7 @@
     "e24d3f7b51974d3e8d8dd71cb44a4c80": 2
   },
   "OrderComponentTemplate": {
+    "03417fbb54fd4161b8b1d23aab85b5d2": 7,
     "67423b3d4ad7425781cc24ca627f3d09": 4,
     "74075ecc25b14a16b2705b5b76712324": 3,
     "75cd3cbe2e974bc98ba87c8c2de854e7": 0,
@@ -540,6 +545,7 @@
     "Button1_1": {},
     "Button1_2": {},
     "Button1_3": {},
+    "Button2": {},
     "Button3": {},
     "Button3_10": {},
     "Button3_11": {},
@@ -565,6 +571,7 @@
     "Component2": {},
     "Component2_1": {},
     "Component3": {},
+    "Component4": {},
     "Container1": {},
     "Container1_1": {},
     "Container1_10": {},
@@ -944,6 +951,7 @@
     "Button1_1": 114,
     "Button1_2": 51,
     "Button1_3": 344,
+    "Button2": 0,
     "Button3": 18,
     "Button3_10": 370,
     "Button3_11": 371,
@@ -969,6 +977,7 @@
     "Component2": 40,
     "Component2_1": 47,
     "Component3": 54,
+    "Component4": 0,
     "Container1": 230,
     "Container1_1": 12,
     "Container1_10": 217,
@@ -1371,7 +1380,7 @@
       "typedDataCard": 25
     },
     "DeserializationLoadTime": 1.555658,
-    "ErrorCount": 39
+    "ErrorCount": 22
   },
   "WasLocalDatabaseReferencesEmpty": true
 }
