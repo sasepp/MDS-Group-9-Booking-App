@@ -16,12 +16,12 @@ OwnBookings As screen:
         ZIndex: =3
 
     "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =740
+        Height: =818
         Items: =Filter(bookings, User.DisplayName=varUser.FullName)
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =312
-        Y: =150
+        Y: =200
         ZIndex: =5
 
         Rectangle1_3 As rectangle:
@@ -103,6 +103,11 @@ OwnBookings As screen:
 
         Image3_2 As image:
             Height: =116
+            Image: |-
+                =LookUp(
+                    Equipment,
+                    ThisItem.Title = Title
+                ).Image
             OnSelect: =Select(Parent)
             Width: =112
             X: =33
@@ -129,19 +134,16 @@ OwnBookings As screen:
             ZIndex: =12
 
     Button3_2 As button:
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(0, 0, 0, 0)
-        FontWeight: =FontWeight.Normal
-        Height: =72
-        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =57
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
         OnSelect: =Navigate(AdminBookings, ScreenTransition.None)
         Size: =24
-        Text: ="Admin"
-        Underline: =true
+        Text: ="Admin bookings"
         Visible: =isAdminList
-        Width: =125
-        X: =257
-        Y: =80
+        Width: =282
+        X: =179
+        Y: =106
         ZIndex: =6
 
     Container1_9 As groupContainer.horizontalAutoLayoutContainer:

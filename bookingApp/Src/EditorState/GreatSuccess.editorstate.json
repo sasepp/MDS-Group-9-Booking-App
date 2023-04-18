@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "Container1_13": {
+    "Container1_8": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "BorderColor",
@@ -75,7 +75,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Container1_13",
+      "Name": "Container1_8",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -183,7 +183,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "GreatSuccessClient": {
+    "GreatSuccess": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Fill",
@@ -203,18 +203,13 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "GreatSuccessClient",
+      "Name": "GreatSuccess",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
           "Category": "Design",
-          "PropertyName": "Fill",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "ImagePosition",
+          "PropertyName": "Width",
           "RuleProviderType": "Unknown"
         },
         {
@@ -224,17 +219,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Width",
+          "PropertyName": "ImagePosition",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Size",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Orientation",
+          "PropertyName": "Fill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -246,12 +236,22 @@
           "Category": "Design",
           "PropertyName": "LoadingSpinnerColor",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Size",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Orientation",
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultScreenStyle",
       "Type": "ControlInfo"
     },
-    "Icon17_13": {
+    "Icon17_8": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Icon",
@@ -362,7 +362,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Icon17_13",
+      "Name": "Icon17_8",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -495,7 +495,7 @@
       "StyleName": "defaultIconStyle",
       "Type": "ControlInfo"
     },
-    "Icon18_13": {
+    "Icon18_8": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Icon",
@@ -606,7 +606,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Icon18_13",
+      "Name": "Icon18_8",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -739,7 +739,7 @@
       "StyleName": "defaultIconStyle",
       "Type": "ControlInfo"
     },
-    "Icon19_13": {
+    "Icon19_8": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Icon",
@@ -843,7 +843,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Icon19_13",
+      "Name": "Icon19_8",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -976,7 +976,7 @@
       "StyleName": "defaultIconStyle",
       "Type": "ControlInfo"
     },
-    "iconCheck1_1": {
+    "iconCheck1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Icon",
@@ -1028,8 +1028,8 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%TemplatePhoneIconCheck.ID%",
-      "Name": "iconCheck1_1",
-      "ParentIndex": 1,
+      "Name": "iconCheck1",
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1084,12 +1084,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "X",
+          "PropertyName": "Y",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Y",
+          "PropertyName": "X",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1161,7 +1161,7 @@
       "StyleName": "invertedBkgHeaderIconStyle",
       "Type": "ControlInfo"
     },
-    "iconCircle1_1": {
+    "iconCircle1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Fill",
@@ -1188,8 +1188,8 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%TemplatePhoneIconCircle.ID%",
-      "Name": "iconCircle1_1",
-      "ParentIndex": 0,
+      "Name": "iconCircle1",
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1234,12 +1234,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "X",
+          "PropertyName": "Y",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Y",
+          "PropertyName": "X",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1266,7 +1266,7 @@
       "StyleName": "defaultCircleStyle",
       "Type": "ControlInfo"
     },
-    "LblSuccessMsg1_1": {
+    "LblSuccessMsg1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -1326,7 +1326,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "%TemplatePhoneSuccessMsg.ID%",
-      "Name": "LblSuccessMsg1_1",
+      "Name": "LblSuccessMsg1",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1442,7 +1442,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "X",
+          "PropertyName": "Width",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1452,7 +1452,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Width",
+          "PropertyName": "X",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1534,7 +1534,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "navbar_15": {
+    "navbar_8": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -1572,8 +1572,8 @@
         "Description": ""
       },
       "MetaDataIDKey": "",
-      "Name": "navbar_15",
-      "ParentIndex": 2,
+      "Name": "navbar_8",
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1610,7 +1610,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "Timer1_1": {
+    "Timer1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -1724,7 +1724,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Timer1_1",
+      "Name": "Timer1",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1888,5 +1888,5 @@
       "Type": "ControlInfo"
     }
   },
-  "TopParentName": "GreatSuccessClient"
+  "TopParentName": "GreatSuccess"
 }

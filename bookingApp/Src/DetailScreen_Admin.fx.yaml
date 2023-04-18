@@ -2,10 +2,10 @@
 
     DetailForm1 As formViewer:
         DataSource: =[@Equipment]
-        Height: =876
+        Height: =786
         Item: =BrowseGallery1.Selected
         Width: =Parent.Width
-        Y: =80
+        Y: =88
         ZIndex: =1
 
         Title_DataCard1 As typedDataCard.textualViewCard:
@@ -260,6 +260,69 @@
             Tooltip: ="Profile"
             ZIndex: =3
 
+    isAvailableForm As form:
+        DataSource: =Equipment
+        Height: =124
+        Item: =BrowseGallery1.Selected
+        Width: =200
+        X: =238
+        Y: =926
+        ZIndex: =15
+
+        isAvailable_DataCard2 As typedDataCard.toggleEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="isAvailable"
+            Default: =ThisItem.isAvailable
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"isAvailable")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =122
+            Required: =true
+            Update: =DataCardValue19.Value
+            Width: =200
+            X: =0
+            Y: =0
+            ZIndex: =16
+
+            DataCardValue19 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =49
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =154
+                X: =30
+                Y: =40
+                ZIndex: =2
+
+            ErrorMessage20 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue19.Y + DataCardValue19.Height
+                ZIndex: =3
+
+            StarVisible20 As label:
+                Align: =Align.Center
+                Height: =
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =
+                ZIndex: =4
+
     "'Status bar_1' As group":
         Height: =5
         Width: =5
@@ -289,11 +352,12 @@
         Button6_1 As button:
             Height: =62
             HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+            OnSelect: =SubmitForm(isAvailableForm)
             Size: =24
             Text: |
                 =If(LookUp(Equipment, Title = DataCardValue1.Text).isAvailable, "Available", "Unavailable")
-            Width: =267
-            X: =337
+            Width: =172
+            X: =432
             Y: =957
             ZIndex: =14
 
