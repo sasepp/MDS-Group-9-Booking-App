@@ -46,7 +46,7 @@ EditBookingAdmin As screen:
     EditBookingForm As form:
         DataSource: =[@bookings]
         Height: =295
-        Item: =Gallery4_7.Selected
+        Item: =GalleryFilteredItems.Selected
         Width: =640
         Y: =544
         ZIndex: =3
@@ -348,7 +348,7 @@ EditBookingAdmin As screen:
     DisplayBookingForm As formViewer:
         DataSource: =bookings
         Height: =394
-        Item: =Gallery4_7.Selected
+        Item: =GalleryFilteredItems.Selected
         Width: =640
         Y: =112
         ZIndex: =7
