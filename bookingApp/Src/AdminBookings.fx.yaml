@@ -1,4 +1,10 @@
 AdminBookings As screen:
+    OnVisible: |-
+        =ClearCollect(
+            CategoryCollection, 
+            {Result: "Select All"}, 
+            Sort(Distinct(bookings,Title), "Select All")
+            )
 
     navbar_11 As navbar:
 
@@ -130,10 +136,10 @@ AdminBookings As screen:
         AllowEmptySelection: =true
         BorderColor: =RGBA(0, 0, 0, 1)
         ChevronBackground: =RGBA(0, 174, 239, 1)
-        Default: =Blank()
+        Default: ="Select All"
         Height: =43
         HoverFill: =
-        Items: =Distinct(bookings,Title)
+        Items: =CategoryCollection
         OnSelect: =
         PressedFill: =RGBA(0, 0, 0, 0)
         SelectionFill: =RGBA(0, 174, 239, 1)
@@ -221,16 +227,6 @@ AdminBookings As screen:
         X: =517
         Y: =255
         ZIndex: =23
-
-    Label1 As label:
-        Height: =43
-        Size: =21
-        Text: ="All"
-        Visible: =IsBlank(ItemDropdown.Selected)
-        Width: =386
-        X: =131
-        Y: =187
-        ZIndex: =25
 
     Button3_3 As button:
         Fill: =RGBA(0, 174, 239, 1)

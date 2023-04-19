@@ -11,7 +11,12 @@ StartingPage As screen:
     Rectangle2_2 As rectangle:
         Fill: =RGBA(241, 244, 249, 1)
         Height: =186
-        OnSelect: =Navigate(Client)
+        OnSelect: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(Admin) ,
+               Navigate(Client)
+            )
         Tooltip: ="Click here to open the app"
         Width: =573
         X: =32
@@ -21,7 +26,12 @@ StartingPage As screen:
     Image3_1 As image:
         Height: =102
         Image: =User().Image
-        OnSelect: =Navigate(Client)
+        OnSelect: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(Admin) ,
+               Navigate(Client)
+            )
         RadiusBottomLeft: =50
         RadiusBottomRight: =50
         RadiusTopLeft: =50
@@ -33,7 +43,12 @@ StartingPage As screen:
 
     Label12_1 As label:
         Height: =70
-        OnSelect: =Navigate(Client)
+        OnSelect: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(Admin) ,
+               Navigate(Client)
+            )
         Size: =21
         Text: =User().FullName
         Width: =440

@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: |-
+    OnStart: |+
         =Set(
             varUser,
             User()
@@ -14,5 +14,6 @@ App As appinfo:
                 )
             )
         )
+        
     StartScreen: =StartingPage
 
