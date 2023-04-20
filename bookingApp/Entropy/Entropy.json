@@ -432,7 +432,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "04/20/2023 06:07:44",
+  "HeaderLastSavedDateTimeUTC": "04/20/2023 06:52:49",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "0ca4291d-b27e-4c57-b908-9ccda49addf5": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/1d093ac998d84f8384828b314975aef2\"",
@@ -1220,8 +1220,8 @@
     "IconCancel1": 156,
     "IconCancel1_1": 284,
     "IconCancel1_2": 326,
-    "iconCheck1": 163,
-    "iconCircle1": 162,
+    "iconCheck1": 164,
+    "iconCircle1": 163,
     "IconDelete1": 87,
     "IconEdit1": 88,
     "IconRefresh1_2": 60,
@@ -1312,7 +1312,7 @@
     "navbar_5": 103,
     "navbar_6": 56,
     "navbar_7": 128,
-    "navbar_8": 164,
+    "navbar_8": 162,
     "navbar_9": 171,
     "nextMonth_1": 337,
     "nextMonth_2": 31,
@@ -1440,7 +1440,7 @@
       "typedDataCard": 26
     },
     "DeserializationLoadTime": 4.7865157,
-    "ErrorCount": 24
+    "ErrorCount": 41
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

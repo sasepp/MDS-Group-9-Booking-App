@@ -10,13 +10,15 @@ AdminBookings As screen:
 
     "GalleryFilteredItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =410
-        Items: |
-            =
+        Height: =335
+        Items: |-
+            =Sort(
                 Filter(
                     bookings,
                     Title = ItemDropdown.Selected.Value
-                    )
+                    ),
+            'Start Date',
+            SortOrder.Descending)
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
@@ -245,7 +247,7 @@ AdminBookings As screen:
     "GalleryAllItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
         Height: =680
-        Items: =bookings
+        Items: =Sort(bookings,'Start Date',SortOrder.Descending)
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
