@@ -10,7 +10,7 @@ AdminBookings As screen:
 
     "GalleryFilteredItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =680
+        Height: =410
         Items: |
             =
                 Filter(
@@ -20,7 +20,7 @@ AdminBookings As screen:
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
-        TemplateSize: =404
+        TemplateSize: =359
         Visible: =If (ItemDropdown.Selected.Value = ItemDropdown.Selected.Value, true, false)
         Y: =338
         ZIndex: =2
@@ -148,7 +148,7 @@ AdminBookings As screen:
         Width: =471
         X: =131
         Y: =187
-        ZIndex: =5
+        ZIndex: =3
 
     Container1_10 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
@@ -159,7 +159,7 @@ AdminBookings As screen:
         LayoutMode: =LayoutMode.Auto
         Width: =640
         Y: =1018
-        ZIndex: =10
+        ZIndex: =4
 
         Icon17_10 As icon.Home:
             Color: =RGBA(255, 255, 255, 1)
@@ -200,7 +200,7 @@ AdminBookings As screen:
         Width: =344
         X: =131
         Y: =19
-        ZIndex: =11
+        ZIndex: =5
 
     Label5 As label:
         Height: =43
@@ -209,7 +209,7 @@ AdminBookings As screen:
         Width: =108
         X: =23
         Y: =187
-        ZIndex: =13
+        ZIndex: =6
 
     IconRefresh1_4 As icon.Reload:
         AccessibleLabel: =Self.Tooltip
@@ -227,7 +227,7 @@ AdminBookings As screen:
         Width: =75
         X: =517
         Y: =255
-        ZIndex: =23
+        ZIndex: =7
 
     Button3_3 As button:
         Fill: =RGBA(0, 174, 239, 1)
@@ -240,7 +240,7 @@ AdminBookings As screen:
         Width: =282
         X: =179
         Y: =106
-        ZIndex: =26
+        ZIndex: =8
 
     "GalleryAllItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -249,10 +249,10 @@ AdminBookings As screen:
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
-        TemplateSize: =404
+        TemplateSize: =329
         Visible: =If (ItemDropdown.Selected.Value = Blank(), true, false)
         Y: =338
-        ZIndex: =27
+        ZIndex: =9
 
         Rectangle1_2 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
@@ -361,4 +361,106 @@ AdminBookings As screen:
             X: =525
             Y: =17
             ZIndex: =12
+
+    AdminIsAvailableForm As form:
+        DataSource: =Equipment
+        Height: =231
+        Item: =LookUp(Equipment,Label1_1.Text = Title)
+        Visible: =If (ItemDropdown.Selected.Value <> Blank(), true,false)
+        Width: =230
+        X: =7
+        Y: =792
+        ZIndex: =11
+
+        isAvailable_DataCard3 As typedDataCard.yesNoRadioEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="isAvailable"
+            Default: =ThisItem.isAvailable
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"isAvailable")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =225
+            Required: =true
+            Update: =DataCardValue10.Selected.Value = "Yes"
+            Width: =230
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey11 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10 As radio:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =If(Parent.Default, "Yes", "No")
+                DisplayMode: =Parent.DisplayMode
+                Height: =152
+                Items: =["Yes", "No"]
+                PaddingBottom: =0
+                PaddingTop: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 70
+                X: =If(Self.RadioSize = 20, 18, Self.Height = 70, 12, 14)
+                Y: =DataCardKey11.Y + DataCardKey11.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10.Y + DataCardValue10.Height
+                ZIndex: =3
+
+            StarVisible7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey11.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11.Y
+                ZIndex: =4
+
+    Label1 As label:
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Set item availability
+            (Refresh page if selection is not visible)"
+        Visible: =If (ItemDropdown.Selected.Value <> Blank(), true,false)
+        Width: =560
+        X: =23
+        Y: =722
+        ZIndex: =12
+
+    Button1 As button:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =65
+        OnSelect: =SubmitForm(AdminIsAvailableForm)
+        Size: =24
+        Text: ="Submit"
+        Visible: =If (ItemDropdown.Selected.Value <> Blank(), true,false)
+        Width: =197
+        X: =221
+        Y: =892
+        ZIndex: =13
 
