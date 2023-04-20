@@ -1,37 +1,35 @@
 AdminBookings As screen:
+    OnVisible: |-
+        =ClearCollect(
+            CategoryCollection, 
+            {Result: "Select All"}, 
+            Sort(Distinct(bookings,Title), "Select All")
+            )
 
     navbar_11 As navbar:
 
-    "Gallery4_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+    "GalleryFilteredItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =653
+        Height: =335
         Items: |-
-            =SortByColumns(
+            =Sort(
                 Filter(
                     bookings,
-                    Title = ItemDropdown.Selected.Value,
-                    StartsWith(
-                        User.DisplayName,
-                        TextSearchBox1_1.Text
-                    )
-                ),
-                "Title",
-                If(
-                    SortDescending2,
-                    SortOrder.Descending,
-                    SortOrder.Ascending
-                )
-            )
+                    Title = ItemDropdown.Selected.Value
+                    ),
+            'Start Date',
+            SortOrder.Descending)
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
-        TemplateSize: =312
-        Y: =363
+        TemplateSize: =359
+        Visible: =If (ItemDropdown.Selected.Value = ItemDropdown.Selected.Value, true, false)
+        Y: =338
         ZIndex: =2
 
         Rectangle1 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
-            Height: =265
+            Height: =297
             Width: =594
             X: =22
             ZIndex: =1
@@ -107,6 +105,11 @@ AdminBookings As screen:
 
         Image3 As image:
             Height: =110
+            Image: |-
+                =LookUp(
+                    Equipment,
+                    ThisItem.Title = Title
+                ).Image
             OnSelect: =Select(Parent)
             Width: =110
             X: =33
@@ -133,29 +136,21 @@ AdminBookings As screen:
             ZIndex: =12
 
     ItemDropdown As dropdown:
+        AllowEmptySelection: =true
         BorderColor: =RGBA(0, 0, 0, 1)
         ChevronBackground: =RGBA(0, 174, 239, 1)
-        Default: =""
+        Default: ="Select All"
         Height: =43
         HoverFill: =
-        Items: =Distinct(bookings,Title)
+        Items: =CategoryCollection
+        OnSelect: =
         PressedFill: =RGBA(0, 0, 0, 0)
         SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
         Width: =471
         X: =131
-        Y: =136
-        ZIndex: =5
-
-    Label2 As label:
-        FontWeight: =FontWeight.Bold
-        Height: =70
-        Size: =21
-        Text: |-
-            ="Filter:"
-        Width: =560
-        Y: =66
-        ZIndex: =7
+        Y: =187
+        ZIndex: =3
 
     Container1_10 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)
@@ -166,7 +161,7 @@ AdminBookings As screen:
         LayoutMode: =LayoutMode.Auto
         Width: =640
         Y: =1018
-        ZIndex: =10
+        ZIndex: =4
 
         Icon17_10 As icon.Home:
             Color: =RGBA(255, 255, 255, 1)
@@ -206,8 +201,8 @@ AdminBookings As screen:
         Text: ="Admin bookings"
         Width: =344
         X: =131
-        Y: =5
-        ZIndex: =11
+        Y: =19
+        ZIndex: =5
 
     Label5 As label:
         Height: =43
@@ -215,112 +210,8 @@ AdminBookings As screen:
         Text: ="Item"
         Width: =108
         X: =23
-        Y: =136
-        ZIndex: =13
-
-    Label5_1 As label:
-        Height: =43
-        Size: =21
-        Text: ="From"
-        Width: =108
-        X: =23
-        Y: =191
-        ZIndex: =14
-
-    Label5_2 As label:
-        Height: =43
-        Size: =21
-        Text: ="To"
-        Width: =90
-        X: =346
-        Y: =191
-        ZIndex: =15
-
-    Group1_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =18
-        ZIndex: =16
-
-        TextSearchBox1_1 As text:
-            Align: =TextPosition.Left
-            Default: =""
-            DelayOutput: =true
-            Height: =68
-            HintText: ="Search ""created by"" user"
-            PaddingLeft: =70
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =7
-            RadiusTopLeft: =0
-            RadiusTopRight: =7
-            Size: =21
-            Width: =Parent.Width
-            Y: =259
-            ZIndex: =3
-
-        SearchIcon1_1 As icon.Search:
-            Color: =RGBA(191, 190, 190, 1)
-            Height: =Self.Width
-            Icon: =Icon.Search
-            PaddingBottom: =14
-            PaddingLeft: =14
-            PaddingRight: =14
-            PaddingTop: =14
-            Tooltip: ="Search"
-            Width: =TextSearchBox1_1.Height
-            X: =TextSearchBox1_1.X
-            Y: =259
-            ZIndex: =4
-
-    FromDropdown As dropdown:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        ChevronBackground: =RGBA(0, 174, 239, 1)
-        Default: =""
-        Height: =43
-        HoverFill: =
-        Items: =Filter(bookings, Title = ItemDropdown.Selected.Value)
-        PressedFill: =RGBA(0, 0, 0, 0)
-        SelectionFill: =RGBA(0, 174, 239, 1)
-        Size: =21
-        Width: =201
-        X: =131
-        Y: =191
-        ZIndex: =19
-
-    ToDropdown As dropdown:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        ChevronBackground: =RGBA(0, 174, 239, 1)
-        Default: =""
-        Height: =43
-        HoverFill: =
-        Items: =Filter(bookings, Title = ItemDropdown.Selected.Value)
-        PressedFill: =RGBA(0, 0, 0, 0)
-        SelectionFill: =RGBA(0, 174, 239, 1)
-        Size: =21
-        Width: =201
-        X: =401
-        Y: =191
-        ZIndex: =20
-
-    IconSortUpDown1_4 As icon.ArrowsUpDown:
-        AccessibleLabel: =Self.Tooltip
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =66
-        Icon: =Icon.Sort
-        OnSelect: |-
-            =UpdateContext({SortDescending2: !SortDescending2})
-        PaddingBottom: =10
-        PaddingLeft: =5
-        PaddingRight: =5
-        PaddingTop: |
-            =10
-        TabIndex: =0
-        Tooltip: =If(SortDescending2, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
-        Width: =75
-        X: =549
-        Y: =260
-        ZIndex: =22
+        Y: =187
+        ZIndex: =6
 
     IconRefresh1_4 As icon.Reload:
         AccessibleLabel: =Self.Tooltip
@@ -336,7 +227,242 @@ AdminBookings As screen:
         TabIndex: =0
         Tooltip: ="Refresh list"
         Width: =75
-        X: =475
-        Y: =259
-        ZIndex: =23
+        X: =517
+        Y: =255
+        ZIndex: =7
+
+    Button3_3 As button:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =57
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+        OnSelect: =Navigate(OwnBookings, ScreenTransition.None)
+        Size: =24
+        Text: ="Own bookings"
+        Visible: =isAdminList
+        Width: =282
+        X: =179
+        Y: =106
+        ZIndex: =8
+
+    "GalleryAllItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Height: =680
+        Items: =Sort(bookings,'Start Date',SortOrder.Descending)
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
+        TemplatePadding: =0
+        TemplateSize: =329
+        Visible: =If (ItemDropdown.Selected.Value = Blank(), true, false)
+        Y: =338
+        ZIndex: =9
+
+        Rectangle1_2 As rectangle:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =297
+            Width: =594
+            X: =22
+            ZIndex: =1
+
+        Label1_3 As label:
+            Height: =97
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =253
+            X: =161
+            ZIndex: =3
+
+        Label6_13 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.User.DisplayName
+            Width: =259
+            X: =161
+            Y: =133
+            ZIndex: =4
+
+        Label6_15 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.'Start Date'
+            Width: =259
+            X: =161
+            Y: =166
+            ZIndex: =5
+
+        Label6_16 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.'End Date'
+            Width: =259
+            X: =161
+            Y: =194
+            ZIndex: =6
+
+        Label6_12 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="By"
+            Width: =259
+            X: =33
+            Y: =133
+            ZIndex: =7
+
+        Label6_14 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="From"
+            Width: =259
+            X: =33
+            Y: =166
+            ZIndex: =8
+
+        Label6_17 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="To"
+            Width: =259
+            X: =33
+            Y: =198
+            ZIndex: =9
+
+        Image3_3 As image:
+            Height: =110
+            Image: |-
+                =LookUp(
+                    Equipment,
+                    ThisItem.Title = Title
+                ).Image
+            OnSelect: =Select(Parent)
+            Width: =110
+            X: =33
+            Y: =10
+            ZIndex: =10
+
+        Icon6_1 As icon.Edit:
+            Color: =RGBA(0, 0, 0, 1)
+            Icon: =Icon.Edit
+            OnSelect: =Navigate(EditBookingAdmin)
+            X: =429
+            Y: =17
+            ZIndex: =11
+
+        Icon7_1 As icon.CancelBadge:
+            Color: =RGBA(0, 0, 0, 1)
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Remove(bookings,ThisItem)
+                
+                 
+            X: =525
+            Y: =17
+            ZIndex: =12
+
+    AdminIsAvailableForm As form:
+        DataSource: =Equipment
+        Height: =231
+        Item: =LookUp(Equipment,Label1_1.Text = Title)
+        Visible: =If (ItemDropdown.Selected.Value <> Blank(), true,false)
+        Width: =230
+        X: =7
+        Y: =792
+        ZIndex: =11
+
+        isAvailable_DataCard3 As typedDataCard.yesNoRadioEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="isAvailable"
+            Default: =ThisItem.isAvailable
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"isAvailable")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =225
+            Required: =true
+            Update: =DataCardValue10.Selected.Value = "Yes"
+            Width: =230
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey11 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10 As radio:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =If(Parent.Default, "Yes", "No")
+                DisplayMode: =Parent.DisplayMode
+                Height: =152
+                Items: =["Yes", "No"]
+                PaddingBottom: =0
+                PaddingTop: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 70
+                X: =If(Self.RadioSize = 20, 18, Self.Height = 70, 12, 14)
+                Y: =DataCardKey11.Y + DataCardKey11.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10.Y + DataCardValue10.Height
+                ZIndex: =3
+
+            StarVisible7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey11.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11.Y
+                ZIndex: =4
+
+    Label1 As label:
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Set item availability
+            (Refresh page if selection is not visible)"
+        Visible: =If (ItemDropdown.Selected.Value <> Blank(), true,false)
+        Width: =560
+        X: =23
+        Y: =722
+        ZIndex: =12
+
+    Button1 As button:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =65
+        OnSelect: =SubmitForm(AdminIsAvailableForm)
+        Size: =24
+        Text: ="Submit"
+        Visible: =If (ItemDropdown.Selected.Value <> Blank(), true,false)
+        Width: =197
+        X: =221
+        Y: =892
+        ZIndex: =13
 

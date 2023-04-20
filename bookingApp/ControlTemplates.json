@@ -251,6 +251,20 @@
     "OverridableProperties": {},
     "Version": "2.5.1"
   },
+  "radio": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/radio",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "radio",
+    "OverridableProperties": {},
+    "Version": "2.3.0"
+  },
   "rectangle": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -304,6 +318,20 @@
     "IsWidgetTemplate": true,
     "LastModifiedTimestamp": "0",
     "Name": "timer",
+    "OverridableProperties": {},
+    "Version": "2.1.0"
+  },
+  "toggleSwitch": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/toggleSwitch",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "toggleSwitch",
     "OverridableProperties": {},
     "Version": "2.1.0"
   },

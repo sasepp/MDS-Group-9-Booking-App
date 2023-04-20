@@ -3,11 +3,11 @@
     EditForm1 As form:
         BorderColor: =RGBA(0, 159, 218, 1)
         DataSource: =[@Equipment]
-        Height: =938
+        Height: =937
         Item: =BrowseGallery1.Selected
         OnSuccess: =Back()
         Width: =Parent.Width
-        Y: =80
+        Y: =79
         ZIndex: =1
 
         Title_DataCard2 As typedDataCard.textualEditCard:
@@ -163,7 +163,7 @@
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Longdescription")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =98
             MaxLength: =DataSourceInfo([@Equipment], DataSourceInfo.MaxLength, "Longdescription")
             Required: =false
             Update: =DataCardValue6.Text
@@ -378,8 +378,8 @@
 
     IconCancel1 As icon.Cancel:
         AccessibleLabel: =Self.Tooltip
-        Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 174, 239, 1)
         Height: =88
         Icon: =Icon.Cancel
         OnSelect: =ResetForm(EditForm1);Back()
@@ -390,13 +390,13 @@
         TabIndex: =0
         Tooltip: ="Cancel item"
         Width: =88
-        X: =457
-        Y: =66
+        X: =225
+        Y: =908
         ZIndex: =3
 
     IconAccept1 As icon.Check:
         AccessibleLabel: =Self.Tooltip
-        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 174, 239, 1)
         Height: =88
         Icon: =Icon.Check
         OnSelect: =SubmitForm(EditForm1)
@@ -407,8 +407,8 @@
         TabIndex: =0
         Tooltip: ="Submit item"
         Width: =88
-        X: =545
-        Y: =66
+        X: =335
+        Y: =908
         ZIndex: =4
 
     Container1_7 As groupContainer.horizontalAutoLayoutContainer:
