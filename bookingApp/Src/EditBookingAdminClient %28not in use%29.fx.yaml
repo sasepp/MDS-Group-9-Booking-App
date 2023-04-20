@@ -1,4 +1,4 @@
-EditBookingClient As screen:
+"'EditBookingAdminClient (not in use)' As screen":
 
     Container1_12 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(0, 174, 239, 1)

@@ -136,6 +136,6 @@
     "StartingPage",
     "GlobalBottomTabsScreen",
     "EditBookingAdmin",
-    "EditBookingClient"
+    "EditBookingAdminClient (not in use)"
   ]
 }

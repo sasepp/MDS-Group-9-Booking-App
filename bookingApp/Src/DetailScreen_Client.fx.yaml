@@ -80,6 +80,45 @@
                 Y: =DataCardKey2_1.Y + DataCardKey2_1.Height + 5
                 ZIndex: =2
 
+        "'Website/Manual_DataCard1_1' As typedDataCard.urlViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Website"
+            Default: =ThisItem.'Website/Manual'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Website")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey4_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =5
+                ZIndex: =1
+
+            DataCardValue4_1 As htmlViewer:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =45
+                HtmlText: ="<a href='" & Parent.Default & "'>" & Parent.Default & "</a>"
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 5
+                ZIndex: =2
+
         Description_DataCard1_1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Longdescription"
@@ -91,7 +130,7 @@
             Required: =false
             Width: =638
             X: =0
-            Y: =2
+            Y: =3
             ZIndex: =1
 
             DataCardKey3_1 As label:
@@ -113,48 +152,10 @@
                 PaddingTop: =0
                 Size: =21
                 Text: =Parent.Default
+                VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey3_1.Y + DataCardKey3_1.Height + 5
-                ZIndex: =2
-
-        "'Website/Manual_DataCard1_1' As typedDataCard.urlViewCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Website"
-            Default: =ThisItem.'Website/Manual'
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Website")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =640
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey4_1 As label:
-                AutoHeight: =true
-                Height: =48
-                Size: =21
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue4_1 As htmlViewer:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =45
-                HtmlText: ="<a href='" & Parent.Default & "'>" & Parent.Default & "</a>"
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =21
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 5
                 ZIndex: =2
 
     Icon2_1 As icon.ArrowLeft:
@@ -238,7 +239,7 @@
             ZIndex: =7
 
         Button1_1 As button:
-            Fill: =RGBA(0, 159, 218, 80%)
+            Fill: =RGBA(0, 174, 239, 1)
             Height: =62
             HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
             OnSelect: =Navigate(Calendar, ScreenTransition.None)
@@ -251,6 +252,7 @@
             ZIndex: =8
 
         Button6 As button:
+            Fill: =RGBA(0, 174, 239, 1)
             Height: =62
             HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
             Size: =24

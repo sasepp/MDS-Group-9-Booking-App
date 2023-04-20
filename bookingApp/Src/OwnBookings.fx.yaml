@@ -28,13 +28,13 @@ OwnBookings As screen:
             )
         Layout: =Layout.Vertical
         TemplatePadding: =0
-        TemplateSize: =312
+        TemplateSize: =267
         Y: =200
         ZIndex: =5
 
         Rectangle1_3 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
-            Height: =280
+            Height: =242
             OnSelect: =
             Width: =594
             X: =23
@@ -45,7 +45,7 @@ OwnBookings As screen:
             OnSelect: =Select(Parent)
             Size: =21
             Text: =ThisItem.Title
-            Width: =253
+            Width: =430
             X: =161
             ZIndex: =3
 
@@ -55,8 +55,8 @@ OwnBookings As screen:
             Size: =21
             Text: =ThisItem.User.DisplayName
             Width: =259
-            X: =161
-            Y: =133
+            X: =260
+            Y: =97
             ZIndex: =4
 
         Label6_4 As label:
@@ -65,8 +65,8 @@ OwnBookings As screen:
             Size: =21
             Text: =ThisItem.'Start Date'
             Width: =259
-            X: =161
-            Y: =166
+            X: =260
+            Y: =133
             ZIndex: =5
 
         Label6_9 As label:
@@ -75,8 +75,8 @@ OwnBookings As screen:
             Size: =21
             Text: =ThisItem.'End Date'
             Width: =259
-            X: =161
-            Y: =194
+            X: =260
+            Y: =166
             ZIndex: =6
 
         Label6_8 As label:
@@ -85,8 +85,8 @@ OwnBookings As screen:
             Size: =21
             Text: ="By"
             Width: =99
-            X: =33
-            Y: =133
+            X: =161
+            Y: =97
             ZIndex: =7
 
         Label6_10 As label:
@@ -95,8 +95,8 @@ OwnBookings As screen:
             Size: =21
             Text: ="From"
             Width: =112
-            X: =33
-            Y: =166
+            X: =161
+            Y: =133
             ZIndex: =8
 
         Label6_11 As label:
@@ -105,8 +105,8 @@ OwnBookings As screen:
             Size: =21
             Text: ="To"
             Width: =112
-            X: =33
-            Y: =205
+            X: =161
+            Y: =174
             ZIndex: =9
 
         Image3_2 As image:
@@ -118,28 +118,9 @@ OwnBookings As screen:
                 ).Image
             OnSelect: =Select(Parent)
             Width: =112
-            X: =33
-            Y: =10
+            X: =34
+            Y: =35
             ZIndex: =10
-
-        Icon4 As icon.Edit:
-            BorderColor: =RGBA(0, 159, 218, 1)
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledBorderColor: =RGBA(0, 159, 218, 1)
-            Icon: =Icon.Edit
-            OnSelect: =Navigate(EditBookingClient)
-            X: =420
-            Y: =17
-            ZIndex: =11
-
-        Icon5 As icon.CancelBadge:
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledColor: =RGBA(0, 0, 0, 1)
-            Icon: =Icon.Trash
-            OnSelect: =Remove(bookings,ThisItem)
-            X: =523
-            Y: =17
-            ZIndex: =12
 
     Button3_2 As button:
         Fill: =RGBA(0, 174, 239, 1)
@@ -193,4 +174,22 @@ OwnBookings As screen:
             OnSelect: =Navigate(StartingPage)
             Tooltip: ="Profile"
             ZIndex: =3
+
+    IconRefresh1_5 As icon.Reload:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =66
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@bookings])
+        PaddingBottom: =10
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: |
+            =10
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =75
+        X: =527
+        Y: =101
+        ZIndex: =8
 

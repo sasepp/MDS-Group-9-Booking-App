@@ -2,10 +2,10 @@
 
     DetailForm1 As formViewer:
         DataSource: =[@Equipment]
-        Height: =786
+        Height: =706
         Item: =BrowseGallery1.Selected
         Width: =Parent.Width
-        Y: =88
+        Y: =80
         ZIndex: =1
 
         Title_DataCard1 As typedDataCard.textualViewCard:
@@ -153,6 +153,7 @@
                 PaddingTop: =0
                 Size: =21
                 Text: =Parent.Default
+                VerticalAlign: =VerticalAlign.Top
                 Width: =580
                 X: =30
                 Y: =58
@@ -262,41 +263,57 @@
 
     isAvailableForm As form:
         DataSource: =Equipment
-        Height: =124
+        Height: =193
         Item: =BrowseGallery1.Selected
-        Width: =200
-        X: =238
-        Y: =926
+        Width: =310
+        X: =14
+        Y: =786
         ZIndex: =15
 
-        isAvailable_DataCard2 As typedDataCard.toggleEditCard:
+        isAvailable_DataCard4 As typedDataCard.yesNoRadioEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="isAvailable"
             Default: =ThisItem.isAvailable
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"isAvailable")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =122
+            Height: =134
             Required: =true
-            Update: =DataCardValue19.Value
-            Width: =200
+            Update: =DataCardValue11.Selected.Value = "Yes"
+            Width: =310
             X: =0
             Y: =0
-            ZIndex: =16
+            ZIndex: =1
 
-            DataCardValue19 As toggleSwitch:
+            DataCardKey14 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: |-
+                    ="Set item availability:"
+                Width: =280
+                Wrap: =false
+                X: =15
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11 As radio:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =If(Parent.Default, "Yes", "No")
                 DisplayMode: =Parent.DisplayMode
-                Height: =49
+                Height: =104
+                Items: =["Yes", "No"]
+                PaddingBottom: =0
+                PaddingTop: =0
+                RadioSize: =50
                 Size: =21
                 Tooltip: =Parent.DisplayName
-                Width: =154
-                X: =30
-                Y: =40
+                Width: =143
+                X: =If(Self.RadioSize = 20, 18, Self.Height = 70, 12, 14)
+                Y: =DataCardKey14.Y + DataCardKey14.Height + 5
                 ZIndex: =2
 
-            ErrorMessage20 As label:
+            ErrorMessage10 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -309,18 +326,18 @@
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue19.Y + DataCardValue19.Height
+                Y: =DataCardValue11.Y + DataCardValue11.Height
                 ZIndex: =3
 
-            StarVisible20 As label:
+            StarVisible10 As label:
                 Align: =Align.Center
-                Height: =
+                Height: =DataCardKey14.Height
                 Size: =21
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =
+                Y: =DataCardKey14.Y
                 ZIndex: =4
 
     "'Status bar_1' As group":
@@ -337,27 +354,48 @@
             ZIndex: =12
 
         Button1_4 As button:
-            Fill: =RGBA(0, 159, 218, 80%)
-            Height: =62
+            Fill: =RGBA(0, 174, 239, 1)
+            Height: =61
             HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
             OnSelect: =Navigate(Calendar, ScreenTransition.None)
             Size: =24
             Text: ="Book"
             Visible: =LookUp(Equipment, Title = DataCardValue1.Text).isAvailable = true
-            Width: =187
+            Width: =178
             X: =39
             Y: =957
             ZIndex: =13
 
         Button6_1 As button:
-            Height: =62
+            Fill: =RGBA(0, 174, 239, 1)
+            Height: =61
             HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
-            OnSelect: =SubmitForm(isAvailableForm)
+            OnSelect: =
             Size: =24
             Text: |
                 =If(LookUp(Equipment, Title = DataCardValue1.Text).isAvailable, "Available", "Unavailable")
-            Width: =172
-            X: =432
+            Width: =249
+            X: =354
             Y: =957
             ZIndex: =14
+
+    Icon5 As icon.Check:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =70
+        Icon: =Icon.Check
+        OnSelect: =SubmitForm(isAvailableForm)
+        Width: =70
+        X: =177
+        Y: =862
+        ZIndex: =16
+
+    Label7 As label:
+        Height: =60
+        Size: =21
+        Text: =
+        Width: =205
+        X: =387
+        Y: =878
+        ZIndex: =17
 

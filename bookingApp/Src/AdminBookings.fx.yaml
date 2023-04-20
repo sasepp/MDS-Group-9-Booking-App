@@ -41,6 +41,7 @@ AdminBookings As screen:
             Text: =ThisItem.Title
             Width: =253
             X: =161
+            Y: =16
             ZIndex: =3
 
         Label6 As label:
@@ -147,9 +148,10 @@ AdminBookings As screen:
         PressedFill: =RGBA(0, 0, 0, 0)
         SelectionFill: =RGBA(0, 174, 239, 1)
         Size: =21
+        Visible: =isAdminList
         Width: =471
         X: =131
-        Y: =187
+        Y: =242
         ZIndex: =3
 
     Container1_10 As groupContainer.horizontalAutoLayoutContainer:
@@ -208,9 +210,10 @@ AdminBookings As screen:
         Height: =43
         Size: =21
         Text: ="Item"
+        Visible: =isAdminList
         Width: =108
         X: =23
-        Y: =187
+        Y: =242
         ZIndex: =6
 
     IconRefresh1_4 As icon.Reload:
@@ -227,8 +230,8 @@ AdminBookings As screen:
         TabIndex: =0
         Tooltip: ="Refresh list"
         Width: =75
-        X: =517
-        Y: =255
+        X: =527
+        Y: =101
         ZIndex: =7
 
     Button3_3 As button:
@@ -246,20 +249,20 @@ AdminBookings As screen:
 
     "GalleryAllItems As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 0, 0, 0)
-        Height: =680
+        Height: =695
         Items: =Sort(bookings,'Start Date',SortOrder.Descending)
         Layout: =Layout.Vertical
         TemplateFill: =If(ThisItem.IsSelected,ColorFade(RGBA(240, 120, 170, 100), -20%),( RGBA(0, 0, 0, 0)
         TemplatePadding: =0
-        TemplateSize: =329
+        TemplateSize: =281
         Visible: =If (ItemDropdown.Selected.Value = Blank(), true, false)
-        Y: =338
+        Y: =323
         ZIndex: =9
 
         Rectangle1_2 As rectangle:
             Fill: =RGBA(241, 244, 249, 1)
-            Height: =297
-            Width: =594
+            Height: =246
+            Width: =599
             X: =22
             ZIndex: =1
 
@@ -268,7 +271,7 @@ AdminBookings As screen:
             OnSelect: =Select(Parent)
             Size: =21
             Text: =ThisItem.Title
-            Width: =253
+            Width: =423
             X: =161
             ZIndex: =3
 
@@ -278,8 +281,8 @@ AdminBookings As screen:
             Size: =21
             Text: =ThisItem.User.DisplayName
             Width: =259
-            X: =161
-            Y: =133
+            X: =245
+            Y: =94
             ZIndex: =4
 
         Label6_15 As label:
@@ -288,8 +291,8 @@ AdminBookings As screen:
             Size: =21
             Text: =ThisItem.'Start Date'
             Width: =259
-            X: =161
-            Y: =166
+            X: =245
+            Y: =136
             ZIndex: =5
 
         Label6_16 As label:
@@ -298,8 +301,8 @@ AdminBookings As screen:
             Size: =21
             Text: =ThisItem.'End Date'
             Width: =259
-            X: =161
-            Y: =194
+            X: =245
+            Y: =169
             ZIndex: =6
 
         Label6_12 As label:
@@ -307,29 +310,29 @@ AdminBookings As screen:
             OnSelect: =Select(Parent)
             Size: =21
             Text: ="By"
-            Width: =259
-            X: =33
-            Y: =133
+            Width: =110
+            X: =161
+            Y: =94
             ZIndex: =7
 
         Label6_14 As label:
-            Height: =54
+            Height: =48
             OnSelect: =Select(Parent)
             Size: =21
             Text: ="From"
-            Width: =259
-            X: =33
-            Y: =166
+            Width: =84
+            X: =161
+            Y: =139
             ZIndex: =8
 
         Label6_17 As label:
-            Height: =54
+            Height: =50
             OnSelect: =Select(Parent)
             Size: =21
             Text: ="To"
-            Width: =259
-            X: =33
-            Y: =198
+            Width: =110
+            X: =161
+            Y: =173
             ZIndex: =9
 
         Image3_3 As image:
@@ -342,27 +345,8 @@ AdminBookings As screen:
             OnSelect: =Select(Parent)
             Width: =110
             X: =33
-            Y: =10
+            Y: =38
             ZIndex: =10
-
-        Icon6_1 As icon.Edit:
-            Color: =RGBA(0, 0, 0, 1)
-            Icon: =Icon.Edit
-            OnSelect: =Navigate(EditBookingAdmin)
-            X: =429
-            Y: =17
-            ZIndex: =11
-
-        Icon7_1 As icon.CancelBadge:
-            Color: =RGBA(0, 0, 0, 1)
-            Icon: =Icon.Trash
-            OnSelect: |-
-                =Remove(bookings,ThisItem)
-                
-                 
-            X: =525
-            Y: =17
-            ZIndex: =12
 
     AdminIsAvailableForm As form:
         DataSource: =Equipment
@@ -465,4 +449,15 @@ AdminBookings As screen:
         X: =221
         Y: =892
         ZIndex: =13
+
+    Label2 As label:
+        Height: =47
+        Size: =21
+        Text: |-
+            ="Select an item to edit:"
+        Visible: =isAdminList
+        Width: =560
+        X: =23
+        Y: =185
+        ZIndex: =14
 
