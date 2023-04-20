@@ -17,7 +17,15 @@ OwnBookings As screen:
 
     "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Height: =818
-        Items: =Filter(bookings, User.DisplayName=varUser.FullName)
+        Items: |-
+            =Sort(
+            Filter(
+                bookings,
+                User.DisplayName = varUser.FullName
+            ),
+            'Start Date',
+            SortOrder.Descending
+            )
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =312
